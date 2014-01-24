@@ -19,6 +19,21 @@
 
         <p>Hello world!</p>
 
+        <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;" ></div>
+
+        <script type="text/javascript">
+
+            Morris.Donut({
+                element: 'graph-test',
+                data: [
+                  { label: "Psi", value: 12 },
+                  { label: "Koèky", value: 30 },
+                  { label: "Hadi", value: 20 }
+                ]
+            });
+
+        </script>
+
 
     </body>
 </html>
