@@ -55,23 +55,23 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />-->
-    <Content Include="css\bootstrap-theme.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\morris.css" />
-    <Content Include="css\normalize.css" />
-    <Content Include="css\style.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="img\logo.png" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\jquery-2.0.3.min.js" />
-    <Content Include="js\morris.min.js" />
-    <Content Include="js\raphael-min.js" />
+    <Content Include="public_html\css\bootstrap-theme.css" />
+    <Content Include="public_html\css\bootstrap.css" />
+    <Content Include="public_html\css\morris.css" />
+    <Content Include="public_html\css\normalize.css" />
+    <Content Include="public_html\css\style.css" />
+    <Content Include="public_html\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public_html\img\logo.png" />
+    <Content Include="public_html\js\bootstrap.min.js" />
+    <Content Include="public_html\js\jquery-2.0.3.min.js" />
+    <Content Include="public_html\js\morris.min.js" />
+    <Content Include="public_html\js\raphael-min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <None Include="index.html" />
+    <Content Include="public_html\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public_html\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public_html\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="public_html\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
