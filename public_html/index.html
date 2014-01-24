@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>fn10ui</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="js/jquery-2.0.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/raphael-min.js"></script>
+        <script src="js/morris.min.js"></script>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+
+        <p>Hello world!</p>
+
+        <div class="row">
+<div class="col-md-8">
+<div class="col-md-4">.col-md-4</div>
+</div>
+
+        <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;" ></div>
+
+        <script type="text/javascript">
+
+            Morris.Donut({
+                element: 'graph-test',
+                data: [
+                  { label: "Psi", value: 12 },
+                  { label: "Kočky", value: 30 },
+                  { label: "Hadi", value: 20 }
+                ]
+            });
+
+        </script>
+
+
+    </body>
+</html>
