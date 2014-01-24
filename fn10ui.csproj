@@ -57,12 +57,15 @@
     <Reference Include="System.EnterpriseServices" />-->
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\morris.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\logo.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-2.0.3.min.js" />
+    <Content Include="js\morris.min.js" />
+    <Content Include="js\raphael-min.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
