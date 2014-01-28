@@ -26,7 +26,34 @@
             </div> 
 
             <div class="row">
-                <div class="col-md-3">.col-md-3</div>
+                <div class="col-md-3">.col-md-3
+                <ul>
+            <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span>Dashboard</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Groups and Users</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-hdd"></span>Storage</a>
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-folder-close"></span>Active Volume</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>ZFS Snapshot</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>ZFS Replication</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Periodic snapshot task</a></li>
+                </ul>            
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-globe"></span>Services</a></li>           
+            <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-wrench"></span>System settings</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-eye-open"></span>General settings</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span>Network settings</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-off"></span>Power</a>
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-off"></span>Power down</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-refresh"></span>Reboot</a></li>
+                </ul>
+            </li>                     
+        </ul>
+                </div>
                 <div class="col-md-9">
                     .col-md-9
                     <div class="row">
@@ -38,41 +65,9 @@
 
             <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;" ></div>
 
-            <ul>
-            <li>Dashboard</li>
-            <li>Groups and Users</li>
-            <li>Storage
-                <ul>
-                    <li>Active Volume</li>
-                    <li>ZFS Snapshot</li>
-                    <li>ZFS Replication</li>
-                    <li>Periodic snapshot task</li>
-                </ul>            
-            </li>
-            <li>Services</li>           
-            <li>Settings
-                <ul>
-                    <li>System settings</li>
-                    <li>General settings</li>
-                    <li>Network settings</li>
-                </ul>
-            </li>
-            <li>Dashboard</li>
-            <li>Power
-                <ul>
-                    <li>Power down</li>
-                    <li>Reboot</li>
-                </ul>
-            </li>                     
-        </ul>
+            
 
         </div>
-
-        <form>
-            <input
-                type="text" />
-            <button type="submit" />
-        </form>
 
         <script type="text/javascript">
 
@@ -81,7 +76,8 @@
                 data: [
                   { label: "Psi", value: 12 },
                   { label: "Kočky", value: 30 },
-                  { label: "Hadi", value: 20 }
+                  { label: "Hadi", value: 20 },
+                  { label: "Hadice", value: 38 }
                 ]
             });
 
