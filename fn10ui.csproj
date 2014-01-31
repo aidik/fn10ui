@@ -63,6 +63,7 @@
     <Content Include="public_html\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="public_html\img\logo.png" />
     <Content Include="public_html\js\bootstrap.min.js" />
+    <Content Include="public_html\js\global.js" />
     <Content Include="public_html\js\jquery-2.0.3.min.js" />
     <Content Include="public_html\js\morris.min.js" />
     <Content Include="public_html\js\raphael-min.js" />

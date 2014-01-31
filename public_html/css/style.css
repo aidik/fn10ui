@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+
+}
+
+.container {
+    width: 100%;
+    padding-left: 0px;
+}
+
+#menu {
+
+    background-color: black;
+    width: 100%;
+    color: white;
+
+}
+
+#wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -40px;
+}
+
+#push, #footer {
+        height: 40px;
+}
+
+#footer {
+    background-color: black;
+    color: white;
+}
