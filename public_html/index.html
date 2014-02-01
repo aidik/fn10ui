@@ -66,6 +66,138 @@
                                 <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a>
                                 <a href="#"><span class="glyphicon glyphicon-refresh"></span></a>
                             </div>
+                            toto je tělo?
+                             <form>
+                                <fieldset>               
+                                    <div class="btn-group">
+                                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                         <span class="glyphicon glyphicon-plus-sign"></span>Create Volume <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Create ZFS volume</a></li>
+                                        <li><a href="#">Create UFS volume</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Auto import volume</a></li>
+                                        <li><a href="#">Manual import volume</a></li>
+                                      </ul>
+                                      </div>
+                                      <button type="button" class="btn btn-info">
+                                          <span class="glyphicon glyphicon-edit"></span>Edit
+                                      </button>
+                                      <button type="button" class="btn btn-warning">
+                                          <span class="glyphicon glyphicon-trash"></span>Delete
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-hdd"></span>View disks
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-camera"></span>Create Snapshot
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-flash    "></span>Create ZVOL
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-lock"></span>Change permission
+                                      </button>
+                                      <button type="button" class="btn btn-default">
+                                          <span class="glyphicon glyphicon-info-sign"></span>Volume Status
+                                      </button>
+
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                          <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default" type="button">Search</button>
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <select>
+                                                <option value="volvo">Volvo</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="mercedes">Mercedes</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>    
+                                        
+                                        
+                                        
+                                      </div><!-- /.row -->
+
+                                    
+                                    
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Type</td>
+                                            <td>Parent</td>
+                                            <td>Used</td>
+                                            <td>Available</td>
+                                            <td>Size</td>
+                                            <td>Status</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>honk</td>
+                                                <td>Volume</td>
+                                                <td>-</td>
+                                                <td>459.5KiB (0%)</td>
+                                                <td>10.1TiB</td>
+                                                <td>10.1TiB</td>
+                                                <td>HEALTY</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td> - home</td>
+                                                <td>Dataset</td>
+                                                <td>honk</td>
+                                                <td>459.5KiB (0%)</td>
+                                                <td>10.1TiB</td>
+                                                <td>10.1TiB</td>
+                                                <td>HEALTY</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td> - media</td>
+                                                <td>Dataset</td>
+                                                <td>honk</td>
+                                                <td>459.5KiB (0%)</td>
+                                                <td>10.1TiB</td>
+                                                <td>10.1TiB</td>
+                                                <td>HEALTY</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td> - office</td>
+                                                <td>Dataset</td>
+                                                <td>honk</td>
+                                                <td>459.5KiB (0%)</td>
+                                                <td>10.1TiB</td>
+                                                <td>10.1TiB</td>
+                                                <td>HEALTY</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td> - ubuntu-13_10</td>
+                                                <td>Jail</td>
+                                                <td>honk</td>
+                                                <td>459.5KiB (0%)</td>
+                                                <td>10.1TiB</td>
+                                                <td>10.1TiB</td>
+                                                <td>HEALTY</td>                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody>
+                                        
+                                        
+                                    </table>    
+                                </fieldset>
+
+                                </form>
+                            
                             <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
                         </div>
                     </div>
@@ -81,7 +213,7 @@
                 <p>iXsystem</p>
             </div>
         </div>
-
+        
         <script type="text/javascript">
 
             Morris.Donut({
@@ -94,8 +226,6 @@
                 ]
             });
 
-        </script>
-
-
+        </script>       
     </body>
 </html>
