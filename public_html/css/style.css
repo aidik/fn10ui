@@ -13,7 +13,10 @@ html, body {
     background-color: black;
     width: 100%;
     color: white;
-
+    position:fixed;
+    height: 100%;
+    width: 230px;
+    z-index: 2;
 }
 
 #wrap {
@@ -30,5 +33,9 @@ html, body {
 #footer {
     background-color: black;
     color: white;
+    position: relative;
+    z-index: 5;
 }
+
+
 
