@@ -2,6 +2,8 @@
 @dark-background: #000;
 @light-background: #fff;
 @menu-width: 230px;
+@menu-min-width: 75px;
+@text-hide: 99999px;
 
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
@@ -41,8 +43,16 @@ html, body {
     bottom: 0;
 }
 
+#menu.min {
+    width: @menu-min-width;
+}
+
 #content {
     margin-left: @menu-width + 10px;
+}
+
+#content.min {
+    margin-left: @menu-min-width + 10px;
 }
 
 #content .row {
@@ -78,3 +88,15 @@ html, body {
 #logo span {
     display: none;
 }
+
+#menu.min li a
+{
+    text-indent: -@text-hide;
+    
+}
+#menu.min li a span
+{
+    text-indent: @text-hide + 15px;
+    
+}
+
