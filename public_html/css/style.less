@@ -89,14 +89,25 @@ html, body {
     display: none;
 }
 
-#menu.min li a
+#menu.min li ul
 {
-    text-indent: -@text-hide;
-    
-}
-#menu.min li a span
-{
-    text-indent: @text-hide + 15px;
-    
+    background-color: @dark-background;
+    display: block;
+    height: auto;
+    left: 75px;
+    margin-top: -45px;
+    position: absolute;
+    width: 200px;
+    border-left: 2px solid @dark-background;
+    border-right: 5px solid @dark-background;
+    border-top: 5px solid @dark-background;
+    border-bottom: 5px solid @dark-background;
+    height: auto;
+
 }
 
+#menu.min li ul.collapse
+{
+    display: none;
+
+}

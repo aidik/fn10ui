@@ -2,7 +2,6 @@ $(document).ready(function() {
     $("#blue-div").click(function() {
         if ($("#logo").hasClass("min"))
         {
-            $("#menu ul.nav").fadeOut( "slow" );
             $("#logo").animate({
                 opacity: 0.25,
                 width: "toggle"
@@ -16,13 +15,13 @@ $(document).ready(function() {
                 });
                 $("#menu").animate({
                     width: "230px"
-                }, 300, function() {
+                }, 500, function() {
                     $("#menu").removeClass("min");
-                    $("#menu ul.nav").fadeIn( "slow" );
+                    $("#menu .menu-anchor-text").fadeIn("slow");
                 });
                 $("#content").animate({
                     marginLeft: "240px"
-                }, 300, function() {
+                }, 500, function() {
                     $("#content").removeClass("min");
                 });
             });
@@ -32,14 +31,13 @@ $(document).ready(function() {
         }
         else
         {
-            $("#menu ul.nav").fadeOut( "slow" );
+            $("#menu .menu-anchor-text").fadeOut("slow");
             $("#logo").animate({
                 opacity: 0.25,
                 width: "toggle"
             }, 600, function() {
 
                 $("#logo").addClass("min");
-
                 $("#logo").animate({
                     opacity: 1,
                     width: "toggle"
@@ -49,7 +47,6 @@ $(document).ready(function() {
                     width: "75px"
                 }, 300, function() {
                     $("#menu").addClass("min");
-                    $("#menu ul.nav").fadeIn( "slow" );
                 });
                 $("#content").animate({
                     marginLeft: "85px"
@@ -57,7 +54,7 @@ $(document).ready(function() {
                     $("#content").addClass("min");
                 });
             });
-       }
+        }
     });
     ﻿
 });
