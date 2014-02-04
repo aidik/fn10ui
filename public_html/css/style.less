@@ -1,6 +1,7 @@
 @footer-height: 120px;
 @dark-background: #000;
 @light-background: #fff;
+@menu-width: 230px;
 
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
@@ -13,10 +14,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 
-pozadi {
-
-}
-
 html, body {
     height: 100%;
 }
@@ -24,35 +21,51 @@ html, body {
 .container {
     width: 100%;
     padding-left: 0px;
+    padding-right: 0px;
+    min-height: 100%;
+}
+
+.stretcher
+{
+    position: relative;
 }
 
 #menu {
     background-color: @dark-background;
-    width: 100%;
+    width: @menu-width;
     color: white;
-    position: fixed;
+    position: absolute;
     height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#content {
+    margin-left: @menu-width + 10px;
+}
+
+#content .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#logo {
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 62px;
     width: 230px;
-    z-index: 2;
-}
-
-#wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -(@footer-height);
-}
-
-#push, #footer {
-    height: @footer-height;
-}
-
-#footer {
-    background-color: lighten(@dark-background, 17.5%);
-    color: white;
-    position: relative;
-    z-index: 3;
-    .horizontalni-gradient;
 }
 
 
+#logo a {
+    display: block;
+    height: 62px;
+    width: 230px;
+}
+
+
+#logo span {
+    display: none;
+}
