@@ -1,3 +1,9 @@
+function showAndHide(id)
+{
+    $(".sah").hide();
+    $("#" + id + ".sah").show();
+}
+
 $(document).ready(function() {
     $("#blue-div").click(function() {
         if ($("#logo").hasClass("min"))
@@ -44,12 +50,12 @@ $(document).ready(function() {
                 }, 400, function() {
                 });
                 $("#menu").animate({
-                    width: "75px"
+                    width: "44px"
                 }, 300, function() {
                     $("#menu").addClass("min");
                 });
                 $("#content").animate({
-                    marginLeft: "85px"
+                    marginLeft: "59px"
                 }, 300, function() {
                     $("#content").addClass("min");
                 });

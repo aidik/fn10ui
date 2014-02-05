@@ -2,7 +2,7 @@
 @dark-background: #000;
 @light-background: #fff;
 @menu-width: 230px;
-@menu-min-width: 75px;
+@menu-min-width: 44px;
 @text-hide: 99999px;
 
 .horizontalni-gradient {
@@ -77,12 +77,13 @@ html, body {
 
 #logo.min {
     background-image: url("../img/min-logo.png");
-    width: 75px;
+    background-position: left center;
+    width: @menu-min-width;
 }
 
 
 #logo.min a {
-    width: 75px;
+    width: @menu-min-width;
 }
 
 #logo span {
@@ -94,7 +95,7 @@ html, body {
     background-color: @dark-background;
     display: block;
     height: auto;
-    left: 75px;
+    left: @menu-min-width;
     margin-top: -45px;
     position: absolute;
     width: 200px;
