@@ -2,8 +2,13 @@
 @dark-background: #000;
 @light-background: #fff;
 @menu-width: 230px;
-@menu-min-width: 75px;
+@menu-min-width: 44px;
 @text-hide: 99999px;
+
+@msg-info: lightskyblue;
+@msg-error: red;
+@msg-warning: yellow;
+@msg-succesc: green;
 
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
@@ -77,12 +82,13 @@ html, body {
 
 #logo.min {
     background-image: url("../img/min-logo.png");
-    width: 75px;
+    background-position: left center;
+    width: @menu-min-width;
 }
 
 
 #logo.min a {
-    width: 75px;
+    width: @menu-min-width;
 }
 
 #logo span {
@@ -94,7 +100,7 @@ html, body {
     background-color: @dark-background;
     display: block;
     height: auto;
-    left: 75px;
+    left: @menu-min-width;
     margin-top: -45px;
     position: absolute;
     width: 200px;
@@ -112,14 +118,43 @@ html, body {
 
 }
 
+#msg-panel {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    width: auto%;
+    background-color: @msg-info;
+    border: 2px dotted darken(@msg-info, 25%);
+    padding: 10px 15px 10px 60px;
+    color: darken(@msg-info, 50%);
+    background-image: url("../img/info.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
 
+        
+}
 
-//sdc
+#msg-panel.success {
+  
+    background-color: @msg-succesc;
+    border-color: darken(@msg-succesc, 25%);
+    color: darken(@msg-succesc, 50%);
+    background-image: url("../img/succ.png");
+}
 
-.vdev{
-    margin: 10px;
-    padding: 10px;
-    border: fuchsia solid 2px;
-    min-height: 40px;
-    min-width: 80px;
+#msg-panel.error {
+  
+    background-color: @msg-error;
+    border-color: darken(@msg-error, 25%);
+    color: darken(@msg-error, 50%);
+    background-image: url("../img/erro.png");
+}
+
+#msg-panel.warning {
+  
+    background-color: @msg-warning;
+    border-color: darken(@msg-warning, 25%);
+    color: darken(@msg-warning, 50%);
+    background-image: url("../img/warn.png");
 }

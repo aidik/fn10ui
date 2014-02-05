@@ -58,8 +58,12 @@
             </div>
             <div id="content">
                 <div class="row">
-                    <div class="col-md-9"></div>
-                    <div class="col-md-3">
+                    <div id="msg-panel-wrap" class="col-md-9">
+                        <div id="msg-panel">
+                            Gratulujeme nastavili jsme to i ono.
+                        </div>
+                    </div>
+                    <div id="top-icon-bar" class="col-md-3">
                         <a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
                         <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a>
                         <a href="#"><span class="glyphicon glyphicon-refresh"></span></a>
@@ -202,71 +206,15 @@
                 </form>
 
                 <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
-
-
-                <div id="volume-manager">
-                    <form>
-                        <fieldset>
-                        </fieldset>
-                    </form>
-
-
-                    <form  role="form">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label class="sr-only" for="volumeName">Email address</label>
-                                <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
-                            </div>                   
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Encryption
-                                </label>
-                            </div>                    
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Initialize Safely
-                                </label>
-                            </div> 
-                        </div>
-                        <div class="vdevs">
-                            <div class="vdev cache">
-                                <span class="vdev-name">VDEV CACHE</span>
-                                <form>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                            <li role="presentation" class="divider"></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                        </ul>
-                                    </div>
-
-
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="vdev logs">VDEV LOGS</div>
-                            <div class="vdev vdev01">VDEV VDEV01</div>
-
-
-
-
-                        </div>
-
-
-                    </form>
-
-                </div>
-
-
-                <!-- end of content -->    
+                
+                
+                <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
+                <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
+                <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
+                <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
+                <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
+                <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
+                
             </div>
 
         </div>
