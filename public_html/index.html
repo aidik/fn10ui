@@ -25,31 +25,31 @@
             <div id="menu">
                 <h1 id="logo">
                     <a title="FN 10 GUI" href="#">
-                    <span>FN 10 GUI</span>
+                        <span>FN 10 GUI</span>
                     </a>
                 </h1>
                 <div id="blue-div" style="background-color: blue; height: 30px; color: yellow;">Zmiz</div>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span>Dashboard</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Groups and Users</a></li>
-                    <li><a data-toggle="collapse" href="#collapseStorage"><span class="glyphicon glyphicon-hdd"></span>Storage</a>
-                        <ul id="collapseStorage" class="collapse">
+                    <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span><span class="menu-anchor-text">Dashboard</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="menu-anchor-text">Groups and Users</span></a></li>
+                    <li><a data-toggle="collapse" href="#collapseStorage"><span class="glyphicon glyphicon-hdd"></span><span class="menu-anchor-text">Storage</span></a>
+                        <ul id="collapseStorage" class="nav nav-pills nav-stacked collapse">
                             <li><a href="#"><span class="glyphicon glyphicon-folder-close"></span>Active Volume</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>ZFS Snapshot</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>ZFS Replication</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Periodic snapshot task</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-globe"></span>Services</a></li>
-                    <li><a data-toggle="collapse" href="#collapseSettings"><span class="glyphicon glyphicon-cog"></span>Settings</a>
-                        <ul id="collapseSettings" class="collapse">
+                    <li><a href="#"><span class="glyphicon glyphicon-globe"></span><span class="menu-anchor-text">Services</span></a></li>
+                    <li><a data-toggle="collapse" href="#collapseSettings"><span class="glyphicon glyphicon-cog"></span><span class="menu-anchor-text">Settings</span></a>
+                        <ul id="collapseSettings" class="nav nav-pills nav-stacked collapse">
                             <li><a href="#"><span class="glyphicon glyphicon-wrench"></span>System settings</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-eye-open"></span>General settings</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-signal"></span>Network settings</a></li>
                         </ul>
                     </li>
-                    <li><a data-toggle="collapse" href="#collapsePower"><span class="glyphicon glyphicon-off"></span>Power</a>
-                        <ul id="collapsePower" class="collapse">
+                    <li><a data-toggle="collapse" href="#collapsePower"><span class="glyphicon glyphicon-off"></span><span class="menu-anchor-text">Power</span></a>
+                        <ul id="collapsePower" class="nav nav-pills nav-stacked collapse">
                             <li><a href="#"><span class="glyphicon glyphicon-off"></span>Power down</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-refresh"></span>Reboot</a></li>
                         </ul>
@@ -202,6 +202,71 @@
                 </form>
 
                 <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
+
+
+                <div id="volume-manager">
+                    <form>
+                        <fieldset>
+                        </fieldset>
+                    </form>
+
+
+                    <form  role="form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="volumeName">Email address</label>
+                                <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
+                            </div>                   
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Encryption
+                                </label>
+                            </div>                    
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Initialize Safely
+                                </label>
+                            </div> 
+                        </div>
+                        <div class="vdevs">
+                            <div class="vdev cache">
+                                <span class="vdev-name">VDEV CACHE</span>
+                                <form>
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                                            <li role="presentation" class="divider"></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="vdev logs">VDEV LOGS</div>
+                            <div class="vdev vdev01">VDEV VDEV01</div>
+
+
+
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+                <!-- end of content -->    
             </div>
 
         </div>
@@ -226,3 +291,6 @@
 
     </body>
 </html>
+
+
+

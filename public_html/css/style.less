@@ -2,6 +2,8 @@
 @dark-background: #000;
 @light-background: #fff;
 @menu-width: 230px;
+@menu-min-width: 75px;
+@text-hide: 99999px;
 
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
@@ -41,8 +43,16 @@ html, body {
     bottom: 0;
 }
 
+#menu.min {
+    width: @menu-min-width;
+}
+
 #content {
     margin-left: @menu-width + 10px;
+}
+
+#content.min {
+    margin-left: @menu-min-width + 10px;
 }
 
 #content .row {
@@ -65,7 +75,51 @@ html, body {
     width: 230px;
 }
 
+#logo.min {
+    background-image: url("../img/min-logo.png");
+    width: 75px;
+}
+
+
+#logo.min a {
+    width: 75px;
+}
 
 #logo span {
     display: none;
+}
+
+#menu.min li ul
+{
+    background-color: @dark-background;
+    display: block;
+    height: auto;
+    left: 75px;
+    margin-top: -45px;
+    position: absolute;
+    width: 200px;
+    border-left: 2px solid @dark-background;
+    border-right: 5px solid @dark-background;
+    border-top: 5px solid @dark-background;
+    border-bottom: 5px solid @dark-background;
+    height: auto;
+
+}
+
+#menu.min li ul.collapse
+{
+    display: none;
+
+}
+
+
+
+//sdc
+
+.vdev{
+    margin: 10px;
+    padding: 10px;
+    border: fuchsia solid 2px;
+    min-height: 40px;
+    min-width: 80px;
 }
