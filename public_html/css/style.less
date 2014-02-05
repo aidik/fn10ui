@@ -5,6 +5,11 @@
 @menu-min-width: 44px;
 @text-hide: 99999px;
 
+@msg-info: lightskyblue;
+@msg-error: red;
+@msg-warning: yellow;
+@msg-succesc: green;
+
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(43,160,30,1) 50%, rgba(234,96,37,1) 55%, rgba(125,185,232,1) 100%); /* FF3.6+ */
@@ -111,4 +116,45 @@ html, body {
 {
     display: none;
 
+}
+
+#msg-panel {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    width: auto%;
+    background-color: @msg-info;
+    border: 2px dotted darken(@msg-info, 25%);
+    padding: 10px 15px 10px 60px;
+    color: darken(@msg-info, 50%);
+    background-image: url("../img/info.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+
+        
+}
+
+#msg-panel.success {
+  
+    background-color: @msg-succesc;
+    border-color: darken(@msg-succesc, 25%);
+    color: darken(@msg-succesc, 50%);
+    background-image: url("../img/succ.png");
+}
+
+#msg-panel.error {
+  
+    background-color: @msg-error;
+    border-color: darken(@msg-error, 25%);
+    color: darken(@msg-error, 50%);
+    background-image: url("../img/erro.png");
+}
+
+#msg-panel.warning {
+  
+    background-color: @msg-warning;
+    border-color: darken(@msg-warning, 25%);
+    color: darken(@msg-warning, 50%);
+    background-image: url("../img/warn.png");
 }
