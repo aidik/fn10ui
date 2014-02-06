@@ -59,9 +59,14 @@
             <div id="content">
                 <div class="row">
                     <div id="msg-panel-wrap" class="col-md-9">
-                        <div id="msg-panel">
+                        <div id="msg-panel" class="alert alert-warning fade in">
                             Gratulujeme nastavili jsme to i ono.
                         </div>
+                    </div>
+                    <div class="alert alert-warning fade in">
+                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                        <strong>Holy guacamole!</strong>
+                        Best check yo self, you're not looking too good.
                     </div>
                     <div id="top-icon-bar" class="col-md-3">
                         <a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
@@ -108,6 +113,7 @@
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-info-sign"></span>Volume Status
                         </button>
+
 
                         <div class="row">
                             <div class="col-lg-3">
@@ -206,22 +212,23 @@
                 </form>
 
                 <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
-                
-                
+
+
                 <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
                 <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
                 <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
                 <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
                 <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
                 <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
-                
 
+                <fieldset class="volume-manager">
+                    <legend class="volume-manager">Volume manager</legend>
                     <form  role="form">
                         <div class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="volumeName">Email address</label>
                                 <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
-            </div>
+                            </div>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"> Encryption
@@ -234,41 +241,83 @@
                             </div> 
                         </div>
                         <div class="vdevs">
-                            <div class="vdev cache">
-                                <span class="vdev-name">VDEV CACHE</span>
-                                <form>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                            <li role="presentation" class="divider"></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                        </ul>
-                                    </div>
-
-
+                            <fieldset class="vdev-border cache">
+                                <legend class="vdev-border cache">Device CACHE</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV CACHE</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
                                     <button type="button" class="btn btn-default">
                                         <span class="glyphicon glyphicon-plus-sign"></span>Disks
                                     </button>
-                                </form>
-        </div>
-                            <div class="vdev logs">VDEV LOGS</div>
-                            <div class="vdev vdev01">VDEV VDEV01</div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="vdev-border logs">
+                                <legend class="vdev-border logs">Device LOGS</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV LOGS</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
 
+                            <fieldset class="vdev-border vdev01">
+                                <legend class="vdev-border vdev01">Device VDEV01</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV VDEV01</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
 
+                            <fieldset class="vdev-border vdev02">
+                                <legend class="vdev-border vdev02">Device VDEV02</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV VDEV02</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
 
-
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
+                            </button>
                         </div>
 
 
-                    </form>
 
-                </div>
+                    </form>
+                </fieldset>
+
 
 
                 <!-- end of content -->    

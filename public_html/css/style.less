@@ -118,7 +118,7 @@ html, body {
 
 }
 
-#msg-panel {
+#msg-panelx {
     display: none;
     position: fixed;
     z-index: 100;
@@ -132,11 +132,11 @@ html, body {
     background-position: 15px center;
     background-repeat: no-repeat;
 
-        
+
 }
 
 #msg-panel.success {
-  
+
     background-color: @msg-succesc;
     border-color: darken(@msg-succesc, 25%);
     color: darken(@msg-succesc, 50%);
@@ -144,7 +144,7 @@ html, body {
 }
 
 #msg-panel.error {
-  
+
     background-color: @msg-error;
     border-color: darken(@msg-error, 25%);
     color: darken(@msg-error, 50%);
@@ -152,7 +152,7 @@ html, body {
 }
 
 #msg-panel.warning {
-  
+
     background-color: @msg-warning;
     border-color: darken(@msg-warning, 25%);
     color: darken(@msg-warning, 50%);
@@ -161,10 +161,19 @@ html, body {
 
 //sdc
 
-.vdev{
-    margin: 10px;
-    padding: 10px;
-    border: fuchsia solid 2px;
-    min-height: 40px;
-    min-width: 80px;
+fieldset.vdev-border, fieldset.volume-manager {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.vdev-border, legend.volume-manager{
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
 }
