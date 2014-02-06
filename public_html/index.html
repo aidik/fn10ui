@@ -60,9 +60,14 @@
             <div id="content">
                 <div class="row">
                     <div id="msg-panel-wrap" class="col-md-9">
-                        <div id="msg-panel">
+                        <div id="msg-panel" class="alert alert-warning fade in">
                             Gratulujeme nastavili jsme to i ono.
                         </div>
+                    </div>
+                    <div class="alert alert-warning fade in">
+                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                        <strong>Holy guacamole!</strong>
+                        Best check yo self, you're not looking too good.
                     </div>
                     <div id="top-icon-bar" class="col-md-3">
                         <a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
@@ -109,6 +114,7 @@
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-info-sign"></span>Volume Status
                         </button>
+
 
                         <div class="row">
                             <div class="col-lg-3">
@@ -216,149 +222,144 @@
                 <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
                 <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
 
+
                 <div id="d3graph"></div>
 
-                <script>
-
-                    var width = 450,
-                            height = 300,
-                            radius = Math.min(width, height) / 2;
-
-                    var color = d3.scale.ordinal()
-                            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
-                    var arc = d3.svg.arc()
-                            .outerRadius(radius - 10)
-                            .innerRadius(0);
-
-                    var pie = d3.layout.pie()
-                            .sort(null)
-                            .value(function(d) {
-                                return d.population;
-                            });
-
-                    var svg = d3.select("#d3graph").append("svg")
-                            .attr("width", width)
-                            .attr("height", height)
-                            .append("g")
-                            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-                    d3.csv("data.csv", function(error, data) {
-
-                        data.forEach(function(d) {
-                            d.population = +d.population;
-                        });
-
-                        var g = svg.selectAll(".arc")
-                                .data(pie(data))
-                                .enter().append("g")
-                                .attr("class", "arc");
-
-                        g.append("path")
-                                .attr("d", arc)
-                                .style("fill", function(d) {
-                                    return color(d.data.age);
-                                });
-
-                        g.append("text")
-                                .attr("transform", function(d) {
-                                    return "translate(" + arc.centroid(d) + ")";
-                                })
-                                .attr("dy", ".35em")
-                                .style("text-anchor", "middle")
-                                .text(function(d) {
-                                    return d.data.age;
-                                });
-
-                        g.append("link").text(function(d) {
-                                    return d.data.link;
-                                });
-
+                <script type="text/javascript">
+                    makePie({
+                        width: 300,
+                        height: 300,
+                        colors: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#F0F0F0"],
+                        source: "data.csv",
+                        donut: true,
+                        attachTo: "#d3graph"
                     });
-
                 </script>
 
 
 
-                <form  role="form">
-                    <div class="form-inline">
-                        <div class="form-group">
-                            <label class="sr-only" for="volumeName">Email address</label>
-                            <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
+                <fieldset class="volume-manager">
+                    <legend class="volume-manager">Volume manager</legend>
+                    <form  role="form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="volumeName">Email address</label>
+                                <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Encryption
+                                </label>
+                            </div>                    
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Initialize Safely
+                                </label>
+                            </div> 
+
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Encryption
-                            </label>
-                        </div>                    
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Initialize Safely
-                            </label>
-                        </div> 
-                    </div>
-                    <div class="vdevs">
-                        <div class="vdev cache">
-                            <span class="vdev-name">VDEV CACHE</span>
-                            <form>
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                        Dropdown
-                                        <span class="caret"></span>
+
+                        <div class="vdevs">
+                            <fieldset class="vdev-border cache">
+                                <legend class="vdev-border cache">Device CACHE</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV CACHE</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+
                                     </button>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                        <li role="presentation" class="divider"></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                    </ul>
                                 </div>
+                            </fieldset>
+                            <fieldset class="vdev-border logs">
+                                <legend class="vdev-border logs">Device LOGS</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV LOGS</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
 
+                            <fieldset class="vdev-border vdev01">
+                                <legend class="vdev-border vdev01">Device VDEV01</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV VDEV01</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
 
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                </button>
-                            </form>
+                            <fieldset class="vdev-border vdev02">
+                                <legend class="vdev-border vdev02">Device VDEV02</legend>
+                                <div class="vdev-group">+/-</div>
+                                <div class="vdev-name">VDEV VDEV02</div>
+                                <div class="vdev-controls">
+                                    <select>
+                                        <option value="raidZ1">RaidZ1</option>
+                                        <option value="raidz2">RaidZ2</option>
+                                        <option value="stripe">Stripe</option>
+                                        <option value="mirror">Mirror</option>                                    
+                                    </select>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
+                            </button>
                         </div>
-                        <div class="vdev logs">VDEV LOGS</div>
-                        <div class="vdev vdev01">VDEV VDEV01</div>
 
+                    </form>
+                </fieldset>
 
-
-
-                    </div>
-
-
-                </form>
-
+                <!-- end of content -->    
             </div>
 
-
-            <!-- end of content -->    
         </div>
 
-    </div>
 
 
 
+        <script type="text/javascript">
 
-    <script type="text/javascript">
+            Morris.Donut({
+                element: 'graph-test',
+                data: [
+                    {label: "Psi", value: 12},
+                    {label: "Kočky", value: 30},
+                    {label: "Hadi", value: 20},
+                    {label: "Hadice", value: 38}
+                ]
+            });
 
-        Morris.Donut({
-            element: 'graph-test',
-            data: [
-                {label: "Psi", value: 12},
-                {label: "Kočky", value: 30},
-                {label: "Hadi", value: 20},
-                {label: "Hadice", value: 38}
-            ]
-        });
-
-    </script>
+        </script>
 
 
-</body>
+    </body>
 </html>
 
 
