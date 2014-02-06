@@ -20,15 +20,19 @@ function showMsgPanel(type, msg)
     {
         msgPanel.addClass("success");
     }
-    
+
     msgPanel.text(msg);
     msgPanel.fadeIn("slow");
-    msgPanel.delay(5000).fadeOut("slow", function() {msgPanel.removeClass();});    
+    msgPanel.delay(5000).fadeOut("slow", function() {
+        msgPanel.removeClass();
+    });
 }
 
 $(document).ready(function() {
 
-
+    svg.selectAll(".arc").on("click", function() {
+        alert(d3.select(this).select("link").text() + " was clicked");
+    });
 
 
     $("#blue-div").click(function() {

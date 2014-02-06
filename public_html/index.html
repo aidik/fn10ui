@@ -16,6 +16,7 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/raphael-min.js" type="text/javascript"></script>
         <script src="js/morris.min.js" type="text/javascript"></script>
+        <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
         <script src="js/global.js" type="text/javascript"></script>
         <script src="js/less-1.6.1.min.js" type="text/javascript"></script>
     </head>
@@ -206,95 +207,158 @@
                 </form>
 
                 <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
-                
-                
+
+
                 <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
                 <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
                 <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
                 <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
                 <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
                 <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
-                
 
-                    <form  role="form">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label class="sr-only" for="volumeName">Email address</label>
-                                <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
-            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Encryption
-                                </label>
-                            </div>                    
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Initialize Safely
-                                </label>
-                            </div> 
+                <div id="d3graph"></div>
+
+                <script>
+
+                    var width = 450,
+                            height = 300,
+                            radius = Math.min(width, height) / 2;
+
+                    var color = d3.scale.ordinal()
+                            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+                    var arc = d3.svg.arc()
+                            .outerRadius(radius - 10)
+                            .innerRadius(0);
+
+                    var pie = d3.layout.pie()
+                            .sort(null)
+                            .value(function(d) {
+                                return d.population;
+                            });
+
+                    var svg = d3.select("#d3graph").append("svg")
+                            .attr("width", width)
+                            .attr("height", height)
+                            .append("g")
+                            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+                    d3.csv("data.csv", function(error, data) {
+
+                        data.forEach(function(d) {
+                            d.population = +d.population;
+                        });
+
+                        var g = svg.selectAll(".arc")
+                                .data(pie(data))
+                                .enter().append("g")
+                                .attr("class", "arc");
+
+                        g.append("path")
+                                .attr("d", arc)
+                                .style("fill", function(d) {
+                                    return color(d.data.age);
+                                });
+
+                        g.append("text")
+                                .attr("transform", function(d) {
+                                    return "translate(" + arc.centroid(d) + ")";
+                                })
+                                .attr("dy", ".35em")
+                                .style("text-anchor", "middle")
+                                .text(function(d) {
+                                    return d.data.age;
+                                });
+
+                        g.append("link").text(function(d) {
+                                    return d.data.link;
+                                });
+
+                    });
+
+                </script>
+
+
+
+                <form  role="form">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="volumeName">Email address</label>
+                            <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
                         </div>
-                        <div class="vdevs">
-                            <div class="vdev cache">
-                                <span class="vdev-name">VDEV CACHE</span>
-                                <form>
-                                    <div class="dropdown">
-                                        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                            <li role="presentation" class="divider"></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                        </ul>
-                                    </div>
-
-
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Encryption
+                            </label>
+                        </div>                    
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Initialize Safely
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="vdevs">
+                        <div class="vdev cache">
+                            <span class="vdev-name">VDEV CACHE</span>
+                            <form>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                        Dropdown
+                                        <span class="caret"></span>
                                     </button>
-                                </form>
-        </div>
-                            <div class="vdev logs">VDEV LOGS</div>
-                            <div class="vdev vdev01">VDEV VDEV01</div>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
 
 
-
-
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                </button>
+                            </form>
                         </div>
+                        <div class="vdev logs">VDEV LOGS</div>
+                        <div class="vdev vdev01">VDEV VDEV01</div>
 
 
-                    </form>
-
-                </div>
 
 
-                <!-- end of content -->    
+                    </div>
+
+
+                </form>
+
             </div>
 
+
+            <!-- end of content -->    
         </div>
 
+    </div>
 
 
 
-        <script type="text/javascript">
 
-            Morris.Donut({
-                element: 'graph-test',
-                data: [
-                    {label: "Psi", value: 12},
-                    {label: "Kočky", value: 30},
-                    {label: "Hadi", value: 20},
-                    {label: "Hadice", value: 38}
-                ]
-            });
+    <script type="text/javascript">
 
-        </script>
+        Morris.Donut({
+            element: 'graph-test',
+            data: [
+                {label: "Psi", value: 12},
+                {label: "Kočky", value: 30},
+                {label: "Hadi", value: 20},
+                {label: "Hadice", value: 38}
+            ]
+        });
+
+    </script>
 
 
-    </body>
+</body>
 </html>
 
 
