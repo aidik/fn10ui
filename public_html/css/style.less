@@ -161,7 +161,7 @@ html, body {
 
 //sdc
 
-fieldset.vdev-border, fieldset.volume-manager {
+fieldset.vdev-border, fieldset.volume-manager, fieldset.jbod{
     border: 1px groove #ddd !important;
     padding: 0 1.4em 1.4em 1.4em !important;
     margin: 0 0 1.5em 0 !important;
@@ -169,11 +169,22 @@ fieldset.vdev-border, fieldset.volume-manager {
     box-shadow:  0px 0px 0px 0px #000;
 }
 
-legend.vdev-border, legend.volume-manager{
+legend.vdev-border, legend.volume-manager, legend.jbod{
     font-size: 1.2em !important;
     font-weight: bold !important;
     text-align: left !important;
     width:auto;
     padding:0 10px;
     border-bottom:none;
+}
+.drives{
+    border: 1px fuchsia solid;
+    
+}
+.hdd{
+    width: 40px;
+    height: 40px;
+    border: blue 1px solid;
+    margin: 5px;
+    display: inline-block;
 }
