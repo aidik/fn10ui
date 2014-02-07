@@ -1,7 +1,7 @@
 function showAndHide(id)
 {
     $(".sah").hide();
-    $("#" + id + ".sah").show();
+    $("#" + id + ".sah").fadeIn("fast");
 }
 
 function showMsgPanel(type, msg)
@@ -74,8 +74,8 @@ function makePie(Options)
     {
         var donut = true;
     }
-    
-        if (Options !== undefined && Options.attachTo !== undefined)
+
+    if (Options !== undefined && Options.attachTo !== undefined)
     {
         var attachTo = Options.attachTo;
     }
@@ -150,6 +150,8 @@ function makePie(Options)
 }
 
 $(document).ready(function() {
+
+    showAndHide('dashboard');
 
     d3.selectAll(".arc").on("click", function() {
         alert(d3.select(this).select("text").attr("data-link") + " was clicked");

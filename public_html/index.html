@@ -31,11 +31,12 @@
                 </h1>
                 <div id="blue-div" style="background-color: blue; height: 30px; color: yellow;">Zmiz</div>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span><span class="menu-anchor-text">Dashboard</span></a></li>
+                    <li><a href="Javascript: showAndHide('dashboard');"><span class="glyphicon glyphicon-dashboard"></span><span class="menu-anchor-text">Dashboard</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="menu-anchor-text">Groups and Users</span></a></li>
                     <li><a data-toggle="collapse" href="#collapseStorage"><span class="glyphicon glyphicon-hdd"></span><span class="menu-anchor-text">Storage</span></a>
                         <ul id="collapseStorage" class="nav nav-pills nav-stacked collapse">
-                            <li><a href="#"><span class="glyphicon glyphicon-folder-close"></span>Active Volume</a></li>
+                            <li><a href="Javascript: showAndHide('volman');"><span class="glyphicon glyphicon-folder-close"></span>Volume Manager</a></li>
+                            <li><a href="Javascript: showAndHide('drives');"><span class="glyphicon glyphicon-folder-close"></span>Drives</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>ZFS Snapshot</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>ZFS Replication</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Periodic snapshot task</a></li>
@@ -75,271 +76,275 @@
                         <a href="#"><span class="glyphicon glyphicon-refresh"></span></a>
                     </div>
                 </div>
-                toto je tělo?
-                <form>
-                    <fieldset>               
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-plus-sign"></span>Create Volume <span class="caret"></span>
+
+                <!-- start of dashboard -->
+                <div id='dashboard' class='sah'>
+                    toto je tělo?
+                    <form>
+                        <fieldset>               
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>Create Volume <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Create ZFS volume</a></li>
+                                    <li><a href="#">Create UFS volume</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Auto import volume</a></li>
+                                    <li><a href="#">Manual import volume</a></li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn btn-info">
+                                <span class="glyphicon glyphicon-edit"></span>Edit
                             </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Create ZFS volume</a></li>
-                                <li><a href="#">Create UFS volume</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Auto import volume</a></li>
-                                <li><a href="#">Manual import volume</a></li>
-                            </ul>
-                        </div>
-                        <button type="button" class="btn btn-info">
-                            <span class="glyphicon glyphicon-edit"></span>Edit
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                            <span class="glyphicon glyphicon-trash"></span>Delete
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-hdd"></span>View disks
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-camera"></span>Create Snapshot
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-flash    "></span>Create ZVOL
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-lock"></span>Change permission
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-info-sign"></span>Volume Status
-                        </button>
-
-
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Search</button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <select>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                    <option value="audi">Trabant</option>
-                                    <option value="audi">Buggati</option>
-                                    <option value="audi">Škoda</option>
-                                    <option value="audi">BMW</option>
-                                </select>
-                            </div>    
-
-
-
-                        </div><!-- /.row -->
-
-
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Parent</td>
-                                    <td>Used</td>
-                                    <td>Available</td>
-                                    <td>Size</td>
-                                    <td>Status</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>honk</td>
-                                    <td>Volume</td>
-                                    <td>-</td>
-                                    <td>459.5KiB (0%)</td>
-                                    <td>10.1TiB</td>
-                                    <td>10.1TiB</td>
-                                    <td>HEALTY</td>                                                
-                                </tr>
-                                <tr>
-                                    <td> - home</td>
-                                    <td>Dataset</td>
-                                    <td>honk</td>
-                                    <td>459.5KiB (0%)</td>
-                                    <td>10.1TiB</td>
-                                    <td>10.1TiB</td>
-                                    <td>HEALTY</td>                                                
-                                </tr>
-                                <tr>
-                                    <td> - media</td>
-                                    <td>Dataset</td>
-                                    <td>honk</td>
-                                    <td>459.5KiB (0%)</td>
-                                    <td>10.1TiB</td>
-                                    <td>10.1TiB</td>
-                                    <td>HEALTY</td>                                                
-                                </tr>
-                                <tr>
-                                    <td> - office</td>
-                                    <td>Dataset</td>
-                                    <td>honk</td>
-                                    <td>459.5KiB (0%)</td>
-                                    <td>10.1TiB</td>
-                                    <td>10.1TiB</td>
-                                    <td>HEALTY</td>                                                
-                                </tr>
-                                <tr>
-                                    <td> - ubuntu-13_10</td>
-                                    <td>Jail</td>
-                                    <td>honk</td>
-                                    <td>459.5KiB (0%)</td>
-                                    <td>10.1TiB</td>
-                                    <td>10.1TiB</td>
-                                    <td>HEALTY</td>                                                
-                                </tr>
-
-
-                            </tbody>
-
-
-                        </table>    
-                    </fieldset>
-
-                </form>
-
-                <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
-
-
-                <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
-                <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
-                <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
-                <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
-                <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
-                <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
-
-                <div id="d3graph"></div>
-
-                <script type="text/javascript">
-                    makePie({
-                        width: 300,
-                        height: 300,
-                        colors: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#F0F0F0"],
-                        source: "data.csv",
-                        donut: true,
-                        attachTo: "#d3graph"
-                    });
-                </script>
-
-
-
-                <!-- start of volume manager -->
-                <fieldset class="volume-manager">
-                    <legend class="volume-manager">Volume manager</legend>
-                    <form  role="form">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label class="sr-only" for="volumeName">Email address</label>
-                                <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Encryption
-                                </label>
-                            </div>                    
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Initialize Safely
-                                </label>
-                            </div> 
-
-                        </div>
-
-                        <div class="vdevs">
-                            <fieldset class="vdev-border cache">
-                                <legend class="vdev-border cache">Device CACHE</legend>
-                                <div class="vdev-group">+/-</div>
-                                <div class="vdev-name">VDEV CACHE</div>
-                                <div class="vdev-controls">
-                                    <select>
-                                        <option value="raidZ1">RaidZ1</option>
-                                        <option value="raidz2">RaidZ2</option>
-                                        <option value="stripe">Stripe</option>
-                                        <option value="mirror">Mirror</option>                                    
-                                    </select>
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
-
-                                    </button>
-                                </div>
-                            </fieldset>
-                            <fieldset class="vdev-border logs">
-                                <legend class="vdev-border logs">Device LOGS</legend>
-                                <div class="vdev-group">+/-</div>
-                                <div class="vdev-name">VDEV LOGS</div>
-                                <div class="vdev-controls">
-                                    <select>
-                                        <option value="raidZ1">RaidZ1</option>
-                                        <option value="raidz2">RaidZ2</option>
-                                        <option value="stripe">Stripe</option>
-                                        <option value="mirror">Mirror</option>                                    
-                                    </select>
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                    </button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="vdev-border vdev01">
-                                <legend class="vdev-border vdev01">Device VDEV01</legend>
-                                <div class="vdev-group">+/-</div>
-                                <div class="vdev-name">VDEV VDEV01</div>
-                                <div class="vdev-controls">
-                                    <select>
-                                        <option value="raidZ1">RaidZ1</option>
-                                        <option value="raidz2">RaidZ2</option>
-                                        <option value="stripe">Stripe</option>
-                                        <option value="mirror">Mirror</option>                                    
-                                    </select>
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                    </button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="vdev-border vdev02">
-                                <legend class="vdev-border vdev02">Device VDEV02</legend>
-                                <div class="vdev-group">+/-</div>
-                                <div class="vdev-name">VDEV VDEV02</div>
-                                <div class="vdev-controls">
-                                    <select>
-                                        <option value="raidZ1">RaidZ1</option>
-                                        <option value="raidz2">RaidZ2</option>
-                                        <option value="stripe">Stripe</option>
-                                        <option value="mirror">Mirror</option>                                    
-                                    </select>
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                    </button>
-                                </div>
-                            </fieldset>
-
+                            <button type="button" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-trash"></span>Delete
+                            </button>
                             <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
+                                <span class="glyphicon glyphicon-hdd"></span>View disks
                             </button>
-                        </div>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-camera"></span>Create Snapshot
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-flash    "></span>Create ZVOL
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-lock"></span>Change permission
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-info-sign"></span>Volume Status
+                            </button>
+
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Search</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <select>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                        <option value="audi">Trabant</option>
+                                        <option value="audi">Buggati</option>
+                                        <option value="audi">Škoda</option>
+                                        <option value="audi">BMW</option>
+                                    </select>
+                                </div>    
+
+
+
+                            </div><!-- /.row -->
+
+
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Type</td>
+                                        <td>Parent</td>
+                                        <td>Used</td>
+                                        <td>Available</td>
+                                        <td>Size</td>
+                                        <td>Status</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>honk</td>
+                                        <td>Volume</td>
+                                        <td>-</td>
+                                        <td>459.5KiB (0%)</td>
+                                        <td>10.1TiB</td>
+                                        <td>10.1TiB</td>
+                                        <td>HEALTY</td>                                                
+                                    </tr>
+                                    <tr>
+                                        <td> - home</td>
+                                        <td>Dataset</td>
+                                        <td>honk</td>
+                                        <td>459.5KiB (0%)</td>
+                                        <td>10.1TiB</td>
+                                        <td>10.1TiB</td>
+                                        <td>HEALTY</td>                                                
+                                    </tr>
+                                    <tr>
+                                        <td> - media</td>
+                                        <td>Dataset</td>
+                                        <td>honk</td>
+                                        <td>459.5KiB (0%)</td>
+                                        <td>10.1TiB</td>
+                                        <td>10.1TiB</td>
+                                        <td>HEALTY</td>                                                
+                                    </tr>
+                                    <tr>
+                                        <td> - office</td>
+                                        <td>Dataset</td>
+                                        <td>honk</td>
+                                        <td>459.5KiB (0%)</td>
+                                        <td>10.1TiB</td>
+                                        <td>10.1TiB</td>
+                                        <td>HEALTY</td>                                                
+                                    </tr>
+                                    <tr>
+                                        <td> - ubuntu-13_10</td>
+                                        <td>Jail</td>
+                                        <td>honk</td>
+                                        <td>459.5KiB (0%)</td>
+                                        <td>10.1TiB</td>
+                                        <td>10.1TiB</td>
+                                        <td>HEALTY</td>                                                
+                                    </tr>
+
+
+                                </tbody>
+
+
+                            </table>    
+                        </fieldset>
 
                     </form>
-                </fieldset>
 
+                    <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
+
+
+                    <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
+                    <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
+                    <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
+                    <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
+                    <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
+                    <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
+
+                    <div id="d3graph"></div>
+
+                    <script type="text/javascript">
+                        makePie({
+                            width: 300,
+                            height: 300,
+                            colors: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#F0F0F0"],
+                            source: "data.csv",
+                            donut: true,
+                            attachTo: "#d3graph"
+                        });
+                    </script>
+                </div>
+                <!-- end of dashboard -->
+
+                <!-- start of volume manager -->
+                <div id="volman" class="sah">
+                    <fieldset class="volume-manager">
+                        <legend class="volume-manager">Volume manager</legend>
+                        <form  role="form">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="volumeName">Email address</label>
+                                    <input type="text" class="form-control" id="volumeName" placeholder="Enter Volume name">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Encryption
+                                    </label>
+                                </div>                    
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Initialize Safely
+                                    </label>
+                                </div> 
+
+                            </div>
+
+                            <div class="vdevs">
+                                <fieldset class="vdev-border cache">
+                                    <legend class="vdev-border cache">Device CACHE</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV CACHE</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+
+                                        </button>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="vdev-border logs">
+                                    <legend class="vdev-border logs">Device LOGS</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV LOGS</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                        </button>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="vdev-border vdev01">
+                                    <legend class="vdev-border vdev01">Device VDEV01</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV VDEV01</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                        </button>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="vdev-border vdev02">
+                                    <legend class="vdev-border vdev02">Device VDEV02</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV VDEV02</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                        </button>
+                                    </div>
+                                </fieldset>
+
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
+                                </button>
+                            </div>
+
+                        </form>
+                    </fieldset>
+                </div>
                 <!-- end of volume manager -->
 
                 <!-- start of drives -->
-                <div class="drives">
+                <div id="drives" class="sah drives">
                     <div class="btn-group">
                         <button type="button" class="btn btn-default">Type</button>
                         <button type="button" class="btn btn-default">Capacity</button>
