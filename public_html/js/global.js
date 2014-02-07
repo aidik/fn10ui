@@ -30,8 +30,7 @@ function showMsgPanel(type, msg)
 
 function makePie(Options)
 {
-
-    if ($.isNumeric(Options.width))
+    if (Options !== undefined && $.isNumeric(Options.width))
     {
         var width = Options.width;
     }
@@ -40,7 +39,7 @@ function makePie(Options)
         var width = 450;
     }
 
-    if ($.isNumeric(Options.height))
+    if (Options !== undefined && $.isNumeric(Options.height))
     {
         var height = Options.height;
     }
@@ -49,7 +48,7 @@ function makePie(Options)
         var height = 300;
     }
 
-    if (Options.colors !== undefined)
+    if (Options !== undefined && Options.colors !== undefined)
     {
         var colors = Options.colors;
     }
@@ -58,7 +57,7 @@ function makePie(Options)
         var colors = ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"];
     }
 
-    if (Options.source !== undefined)
+    if (Options !== undefined && Options.source !== undefined)
     {
         var source = Options.source;
     }
@@ -67,7 +66,7 @@ function makePie(Options)
         var source = "data.csv";
     }
 
-    if (Options.donut !== undefined)
+    if (Options !== undefined && Options.donut !== undefined)
     {
         var donut = Options.donut;
     }
@@ -76,7 +75,7 @@ function makePie(Options)
         var donut = true;
     }
     
-        if (Options.attachTo !== undefined)
+        if (Options !== undefined && Options.attachTo !== undefined)
     {
         var attachTo = Options.attachTo;
     }
