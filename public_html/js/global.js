@@ -1,7 +1,7 @@
 function showAndHide(id)
 {
     $(".sah").hide();
-    $("#" + id + ".sah").show();
+    $("#" + id + ".sah").fadeIn("fast");
 }
 
 function showMsgPanel(type, msg)
@@ -74,8 +74,8 @@ function makePie(Options)
     {
         var donut = true;
     }
-    
-        if (Options !== undefined && Options.attachTo !== undefined)
+
+    if (Options !== undefined && Options.attachTo !== undefined)
     {
         var attachTo = Options.attachTo;
     }
@@ -149,10 +149,34 @@ function makePie(Options)
     });
 }
 
+function callPckryLayout()
+{
+    pckry.layout()
+}
+
 $(document).ready(function() {
+
+    showAndHide('packery-test');
 
     d3.selectAll(".arc").on("click", function() {
         alert(d3.select(this).select("text").attr("data-link") + " was clicked");
+    });
+
+    $(".lock").click(function() {
+        if ($(this).text() === 'LOCK ME')
+        {
+            $(this).text("LOCKED");
+            $(this).parent().addClass("stamp");
+            pckry.stamp('.stamp');
+        }
+        else
+        {
+            $(this).text("LOCK ME");
+            $(this).parent().removeClass("stamp");
+            pckry.unstamp('.stamp');
+            pckry.stamp('.stamp');
+        }
+        pckry.layout();
     });
 
 
