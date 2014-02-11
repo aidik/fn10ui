@@ -243,6 +243,105 @@
                             attachTo: "#d3graph"
                         });
                     </script>
+
+                    <!-- start of dash elements -->
+                    <style>
+
+                        #graph01, #graph02, #graph03, #graph04  {
+                            height: 200px;
+                            width: 350px;
+                        }
+
+                    </style>
+                    <script src="js/graph-test-data.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        //this should generate test data
+                        var data01 = function() {
+                            return stream_layers(3, 10 + Math.random() * 200, .1).map(function(data, i) {
+                                return {
+                                    key: 'Stream' + i,
+                                    values: data
+                                };
+                            });
+                        }
+
+                        var data03 = function() {
+                            return stream_layers(3, 10 + Math.random() * 100, .1).map(function(data, i) {
+                                return {
+                                    key: 'Stream' + i,
+                                    values: data
+                                };
+                            });
+                        }
+
+
+
+                        function exampleData() {
+                            return {"title": "Revenue", "subtitle": "US$, in thousands", "ranges": [150, 225, 300], "measures": [220], "markers": [250]};
+                        }
+
+                        nv.addGraph(function() {
+                            var chart = nv.models.lineWithFocusChart();
+                            chart.xAxis
+                                    .tickFormat(d3.format(',f'));
+                            chart.yAxis
+                                    .tickFormat(d3.format(',.2f'));
+                            chart.y2Axis
+                                    .tickFormat(d3.format(',.2f'));
+                            d3.select('#graph01 svg')
+                                    .datum(data01())
+                                    .transition().duration(500)
+                                    .call(chart);
+                            nv.utils.windowResize(chart.update);
+                            return chart;
+                        });
+                        nv.addGraph(function() {
+                            var chart = nv.models.bulletChart();
+                            d3.select('#graph02 #part01')
+                                    .datum(exampleData())
+                                    .transition().duration(1000)
+                                    .call(chart);
+                            return chart;
+                        });
+                        nv.addGraph(function() {
+                            var chart = nv.models.bulletChart();
+                            d3.select('#graph02 #part02')
+                                    .datum(exampleData())
+                                    .transition().duration(1000)
+                                    .call(chart);
+                            return chart;
+                        });
+                        nv.addGraph(function() {
+                            var chart = nv.models.multiBarChart();
+                            chart.xAxis
+                                    .tickFormat(d3.format(',f'));
+                            chart.yAxis
+                                    .tickFormat(d3.format(',.1f'));
+                            d3.select('#graph03 svg')
+                                    .datum(data03())
+                                    .transition().duration(500).call(chart);
+                            nv.utils.windowResize(chart.update);
+                            return chart;
+                        });</script>
+                    <div class="graph graph01" id="graph01">
+                        <svg></svg>
+                    </div>
+
+                    <div class="graph graph02" id="graph02">
+                        <svg id="part01"></svg>
+                        <svg id="part02"></svg>
+                    </div>
+
+                    <div class="graph graph03" id="graph03">
+                        <svg></svg>
+                    </div>
+
+                    <div class="graph graph04" id="graph04">
+                        <svg></svg>
+                    </div>
+                    <!-- end of dash elements -->
+
+
                 </div>
                 <!-- end of dashboard -->
 
@@ -511,105 +610,6 @@
 
                 </div>
                 <!-- end of services -->
-
-
-                <!-- start of dash elements -->
-                <style>
-
-                    #graph01, #graph02, #graph03, #graph04  {
-                        height: 200px;
-                        width: 350px;
-                    }
-
-                </style>
-                <script src="js/graph-test-data.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    //this should generate test data
-                    var data01 = function() {
-                        return stream_layers(3, 10 + Math.random() * 200, .1).map(function(data, i) {
-                            return {
-                                key: 'Stream' + i,
-                                values: data
-                            };
-                        });
-                    }
-
-                    var data03 = function() {
-                        return stream_layers(3, 10 + Math.random() * 100, .1).map(function(data, i) {
-                            return {
-                                key: 'Stream' + i,
-                                values: data
-                            };
-                        });
-                    }
-
-
-
-                    function exampleData() {
-                        return {"title": "Revenue", "subtitle": "US$, in thousands", "ranges": [150, 225, 300], "measures": [220], "markers": [250]};
-                    }
-
-                    nv.addGraph(function() {
-                        var chart = nv.models.lineWithFocusChart();
-                        chart.xAxis
-                                .tickFormat(d3.format(',f'));
-                        chart.yAxis
-                                .tickFormat(d3.format(',.2f'));
-                        chart.y2Axis
-                                .tickFormat(d3.format(',.2f'));
-                        d3.select('#graph01 svg')
-                                .datum(data01())
-                                .transition().duration(500)
-                                .call(chart);
-                        nv.utils.windowResize(chart.update);
-                        return chart;
-                    });
-                    nv.addGraph(function() {
-                        var chart = nv.models.bulletChart();
-                        d3.select('#graph02 #part01')
-                                .datum(exampleData())
-                                .transition().duration(1000)
-                                .call(chart);
-                        return chart;
-                    });
-                    nv.addGraph(function() {
-                        var chart = nv.models.bulletChart();
-                        d3.select('#graph02 #part02')
-                                .datum(exampleData())
-                                .transition().duration(1000)
-                                .call(chart);
-                        return chart;
-                    });
-                    nv.addGraph(function() {
-                        var chart = nv.models.multiBarChart();
-                        chart.xAxis
-                                .tickFormat(d3.format(',f'));
-                        chart.yAxis
-                                .tickFormat(d3.format(',.1f'));
-                        d3.select('#graph03 svg')
-                                .datum(data03())
-                                .transition().duration(500).call(chart);
-                        nv.utils.windowResize(chart.update);
-                        return chart;
-                    });</script>
-                <div class="graph graph01" id="graph01">
-                    <svg></svg>
-                </div>
-
-                <div class="graph graph02" id="graph02">
-                    <svg id="part01"></svg>
-                    <svg id="part02"></svg>
-                </div>
-
-                <div class="graph graph03" id="graph03">
-                    <svg></svg>
-                </div>
-
-                <div class="graph graph04" id="graph04">
-                    <svg></svg>
-                </div>
-                <!-- end of dash elements -->
-
 
 
 

@@ -46,6 +46,7 @@ html, body {
     top: 0;
     left: 0;
     bottom: 0;
+    .horizontal-gradient (#000000, #272727);
 }
 
 #menu.min {
@@ -220,4 +221,14 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     max-height: 500px;
     display: block;
     position: relative;
+}
+
+
+.horizontal-gradient (@startColor: black, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
 }
