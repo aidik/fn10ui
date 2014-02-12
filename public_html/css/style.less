@@ -10,7 +10,8 @@
 @msg-warning: yellow;
 @msg-succesc: green;
 
-@menu-color: #e8e8e8;
+//@menu-color: #e8e8e8;
+@menu-color: #d1d1d1;
 @menu-color-dark: #272727;
 
 .horizontalni-gradient {
@@ -51,6 +52,10 @@ html, body {
     bottom: 0;
     .horizontal-gradient (#000000, #272727);
 }
+#menu li a
+{
+    padding: 6px 15px;
+}
 
 #menu li a, #menu li ul li a, #menu.min li ul li a
 {
@@ -64,6 +69,7 @@ html, body {
 {
     color: @menu-color-dark;
     border-radius: 0px;
+    background-color: @menu-color;   
 }
 
 #menu li a span+span, #menu li ul li a span+span
