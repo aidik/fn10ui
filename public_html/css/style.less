@@ -10,6 +10,9 @@
 @msg-warning: yellow;
 @msg-succesc: green;
 
+@menu-color: #e8e8e8;
+@menu-color-dark: #272727;
+
 .horizontalni-gradient {
     background: rgb(30,87,153); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(43,160,30,1) 50%, rgba(234,96,37,1) 55%, rgba(125,185,232,1) 100%); /* FF3.6+ */
@@ -40,13 +43,32 @@ html, body {
 #menu {
     background-color: @dark-background;
     width: @menu-width;
-    color: white;
+    color: @menu-color;
     position: absolute;
     height: 100%;
     top: 0;
     left: 0;
     bottom: 0;
     .horizontal-gradient (#000000, #272727);
+}
+
+#menu li a, #menu li ul li a, #menu.min li ul li a
+{
+    color: @menu-color;
+    border-radius: 0px;
+}
+
+#menu li a:hover, #menu li a:active, #menu li a:focus,
+#menu li ul li a:hover, #menu li ul li a:active, #menu li ul li a:focus,
+#menu.min li ul li a:hover, #menu.min li ul li a:active, #menu.min li ul li a:focus
+{
+    color: @menu-color-dark;
+    border-radius: 0px;
+}
+
+#menu li a span+span, #menu li ul li a span+span
+{
+    padding-left: 5px;
 }
 
 #menu.min {
@@ -98,18 +120,15 @@ html, body {
 
 #menu.min li ul
 {
-    background-color: @dark-background;
+    background-color: @menu-color-dark;
     display: block;
     height: auto;
     left: @menu-min-width;
-    margin-top: -45px;
+    margin-top: -43px;
     position: absolute;
     width: 200px;
-    border-left: 2px solid @dark-background;
-    border-right: 5px solid @dark-background;
-    border-top: 5px solid @dark-background;
-    border-bottom: 5px solid @dark-background;
     height: auto;
+    z-index: 1000000;
 
 }
 
@@ -231,4 +250,26 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     background-image: -moz-linear-gradient(left, @startColor, @endColor);
     background-image: -ms-linear-gradient(left, @startColor, @endColor);
     background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+#blue-div
+{ 
+    background-image: url("../img/dots.png");
+    background-repeat: no-repeat;
+    position: relative;
+    left: 210px;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+
+}
+
+#menu.min #blue-div
+{
+    left: 30px; 
+}
+
+.glyphicon 
+{
+    font-size: 125%;
 }
