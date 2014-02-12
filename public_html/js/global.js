@@ -21,9 +21,9 @@ function showMsgPanel(type, msg)
         msgPanel.addClass("success");
     }
 
-    msgPanel.text(msg);
+    msgPanel.children(".msg").text(msg);
     msgPanel.fadeIn("slow");
-    msgPanel.delay(5000).fadeOut("slow", function() {
+    msgPanel.delay(15000).fadeOut("slow", function() {
         msgPanel.removeClass();
     });
 }
@@ -157,6 +157,12 @@ function callPckryLayout()
 $(document).ready(function() {
 
     showAndHide('packery-test');
+
+    $("button.close").click(function() {
+        $("#msg-panel").fadeOut("fast", function() {
+            $("#msg-panel").removeClass();
+        });
+    });
 
     d3.selectAll(".arc").on("click", function() {
         alert(d3.select(this).select("text").attr("data-link") + " was clicked");

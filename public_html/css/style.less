@@ -75,6 +75,12 @@ html, body {
     width: @menu-min-width;
 }
 
+#menu li ul
+{
+    margin-left: 20px;
+    font-size: 80%;
+}
+
 #content {
     margin-left: @menu-width + 10px;
 }
@@ -124,11 +130,12 @@ html, body {
     display: block;
     height: auto;
     left: @menu-min-width;
-    margin-top: -43px;
+    margin-top: -41px;
     position: absolute;
     width: 200px;
     height: auto;
-    z-index: 1000000;
+    z-index: 100;
+    margin-left: 0;
 
 }
 
@@ -138,7 +145,7 @@ html, body {
 
 }
 
-#msg-panelx {
+#msg-panel {
     display: none;
     position: fixed;
     z-index: 100;
@@ -257,7 +264,7 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     background-image: url("../img/dots.png");
     background-repeat: no-repeat;
     position: relative;
-    left: 210px;
+    left: 205px;
     height: 16px;
     width: 16px;
     cursor: pointer;
@@ -266,10 +273,50 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 
 #menu.min #blue-div
 {
-    left: 30px; 
+    left: 20px; 
 }
 
 .glyphicon 
 {
     font-size: 125%;
+}
+
+.cache, .logs
+{
+    width: 36%;
+    float: right;
+}
+
+.vdev01, .vdev02
+{
+    width: 62%;
+    float: left;
+}
+
+.table
+{
+    border: 1px solid #DDDDDD;
+}
+
+.table > thead > tr > th {
+    border: 1px solid #DDDDDD;
+    vertical-align: bottom;
+    background-color: darken(@menu-color, 20%);
+}
+
+.table > tbody > tr > td {
+    border: 1px solid #DDDDDD;
+    vertical-align: bottom;
+}
+
+.table > tbody > tr.odd > td {
+    background-color: lighten(@menu-color, 8%);
+}    
+
+.table > tbody > tr.even > td {
+    background-color: lighten(@menu-color, 4%);
+}   
+
+.table > tbody > tr:hover > td {
+    background-color: darken(@menu-color, 10%);
 }

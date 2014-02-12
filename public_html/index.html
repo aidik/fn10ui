@@ -66,15 +66,12 @@
             <div id="content">
                 <div class="row">
                     <div id="msg-panel-wrap" class="col-md-9">
-                        <div id="msg-panel" class="alert alert-warning fade in">
-                            Gratulujeme nastavili jsme to i ono.
+                        <div id="msg-panel" class="">
+                            <button class="close" aria-hidden="true" type="button">×</button>
+                            <span class="msg">Gratulujeme nastavili jsme to i ono.</span>
                         </div>
                     </div>
-                    <div class="alert alert-warning fade in">
-                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                        <strong>Holy guacamole!</strong>
-                        Best check yo self, you're not looking too good.
-                    </div>
+
                     <div id="top-icon-bar" class="col-md-3">
                         <a href="#"><span class="glyphicon glyphicon-warning-sign"></span></a>
                         <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a>
@@ -153,20 +150,20 @@
 
 
 
-                            <table>
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <td>Name</td>
-                                        <td>Type</td>
-                                        <td>Parent</td>
-                                        <td>Used</td>
-                                        <td>Available</td>
-                                        <td>Size</td>
-                                        <td>Status</td>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Parent</th>
+                                        <th>Used</th>
+                                        <th>Available</th>
+                                        <th>Size</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="odd">
                                         <td>honk</td>
                                         <td>Volume</td>
                                         <td>-</td>
@@ -175,7 +172,7 @@
                                         <td>10.1TiB</td>
                                         <td>HEALTY</td>                                                
                                     </tr>
-                                    <tr>
+                                    <tr class="even">
                                         <td> - home</td>
                                         <td>Dataset</td>
                                         <td>honk</td>
@@ -184,7 +181,7 @@
                                         <td>10.1TiB</td>
                                         <td>HEALTY</td>                                                
                                     </tr>
-                                    <tr>
+                                    <tr class="odd">
                                         <td> - media</td>
                                         <td>Dataset</td>
                                         <td>honk</td>
@@ -193,7 +190,7 @@
                                         <td>10.1TiB</td>
                                         <td>HEALTY</td>                                                
                                     </tr>
-                                    <tr>
+                                    <tr class="even">
                                         <td> - office</td>
                                         <td>Dataset</td>
                                         <td>honk</td>
@@ -202,7 +199,7 @@
                                         <td>10.1TiB</td>
                                         <td>HEALTY</td>                                                
                                     </tr>
-                                    <tr>
+                                    <tr class="odd">
                                         <td> - ubuntu-13_10</td>
                                         <td>Jail</td>
                                         <td>honk</td>
@@ -420,6 +417,22 @@
                             </div>
 
                             <div class="vdevs">
+                                <fieldset class="vdev-border vdev01">
+                                    <legend class="vdev-border vdev01">Device VDEV01</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV VDEV01</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                        </button>
+                                    </div>
+                                </fieldset>
                                 <fieldset class="vdev-border cache">
                                     <legend class="vdev-border cache">Device CACHE</legend>
                                     <div class="vdev-group">+/-</div>
@@ -434,39 +447,6 @@
                                         <button type="button" class="btn btn-default">
                                             <span class="glyphicon glyphicon-plus-sign"></span>Disks
 
-                                        </button>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="vdev-border logs">
-                                    <legend class="vdev-border logs">Device LOGS</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV LOGS</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                        </button>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="vdev-border vdev01">
-                                    <legend class="vdev-border vdev01">Device VDEV01</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV VDEV01</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
                                         </button>
                                     </div>
                                 </fieldset>
@@ -487,7 +467,22 @@
                                         </button>
                                     </div>
                                 </fieldset>
-
+                                <fieldset class="vdev-border logs">
+                                    <legend class="vdev-border logs">Device LOGS</legend>
+                                    <div class="vdev-group">+/-</div>
+                                    <div class="vdev-name">VDEV LOGS</div>
+                                    <div class="vdev-controls">
+                                        <select>
+                                            <option value="raidZ1">RaidZ1</option>
+                                            <option value="raidz2">RaidZ2</option>
+                                            <option value="stripe">Stripe</option>
+                                            <option value="mirror">Mirror</option>                                    
+                                        </select>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                        </button>
+                                    </div>
+                                </fieldset>
                                 <button type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
                                 </button>
