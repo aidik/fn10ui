@@ -238,10 +238,15 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     display: none;
 }
 
+#dashboard.sah
+{
+    display: block;
+}
+
 .item
 {
-    width: 150px;
-    height: 150px;
+    min-height: 150px;
+    min-width: 150px;
     position: relative;
 }
 
@@ -252,8 +257,8 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 
 #packery-test
 {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 100%;
+    min-height: 100%;
     display: block;
     position: relative;
 }
@@ -333,4 +338,5 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 .minimize {
     padding-right: 5px;
     cursor: pointer;
+    font-weight: normal;
 }

@@ -96,33 +96,33 @@
                                     <li><a href="#">Manual import volume</a></li>
                                 </ul>
                             </div>
-                          <!--
-                            <button type="button" class="btn btn-info">
-                                <span class="glyphicon glyphicon-edit"></span>Edit
-                            </button>
-                            <button type="button" class="btn btn-warning">
-                                <span class="glyphicon glyphicon-trash"></span>Delete
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-hdd"></span>View disks
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-camera"></span>Create Snapshot
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-flash    "></span>Create ZVOL
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-lock"></span>Change permission
-                            </button>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-info-sign"></span>Volume Status
-                            </button>
-
-                          -->
+                            <!--
+                              <button type="button" class="btn btn-info">
+                                  <span class="glyphicon glyphicon-edit"></span>Edit
+                              </button>
+                              <button type="button" class="btn btn-warning">
+                                  <span class="glyphicon glyphicon-trash"></span>Delete
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-hdd"></span>View disks
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-camera"></span>Create Snapshot
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-flash    "></span>Create ZVOL
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-lock"></span>Change permission
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-info-sign"></span>Volume Status
+                              </button>
+  
+                            -->
 
                             <div class="row">
                                 <div class="col-lg-3">
@@ -375,17 +375,49 @@
                     </form>
                 </div>
                 <div id='dashboard' class='sah'>
-                    <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
+
+                    <!-- start of packery test box -->
+                    <div id="packery-test" class="">
+                        <div class="item" style="background-color: yellowgreen;">
+                            <span class="lock">LOCK ME</span>
+                            <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
+                        </div>
+                        <div class="item" style="background-color: orange;">
+                            <span class="lock">LOCK ME</span>
+                            <div id="d3graph"></div>
+                        </div>
+                        <div class="item" style="background-color: darkorchid;">
+                            <span class="lock">LOCK ME</span>
+                            <div class="graph graph01" id="graph01">
+                                <svg></svg>
+                            </div>
+                        </div>
+                        <div class="item" style="background-color: royalblue;">
+                            <span class="lock">LOCK ME</span>
+                            <div class="graph graph02" id="graph02">
+                                <svg id="part01"></svg>
+                                <svg id="part02"></svg>
+                            </div>
+                        </div>
+                        <div class="item" style="background-color: rosybrown;">
+                            <span class="lock">LOCK ME</span>
+                            <div class="graph graph03" id="graph03">
+                                <svg></svg>
+                            </div>
+                        </div>
+                        <div class="item" style="background-color: burlywood;">
+                            <span class="lock">LOCK ME</span>
+                            <div class="graph graph04" id="graph04">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
 
 
-                    <!-- classa sah označuje bloky, které se mamjí skrývat (budou defaultně skryté) a zobrazí se zavoláním funkce showAndHide(id) nevím jestli budeme dělat nějaké věci na kroky nebo tak nějak, ale primárně by to mělo fungovat takhle -->
-                    <div id="1" class="sah" style="width: 50px; height: 50px; background-color: whitesmoke;">Jedna</div>
-                    <div id="2" class="sah" style="width: 50px; height: 50px; background-color: yellowgreen;">Dva</div>
-                    <div id="3" class="sah" style="width: 50px; height: 50px; background-color: gainsboro;">Tři</div>
-                    <div id="4" class="sah" style="width: 50px; height: 50px; background-color: bisque;">Čtyři</div>
-                    <div id="5" class="sah" style="width: 50px; height: 50px; background-color: orangered;">Pět</div>
 
-                    <div id="d3graph"></div>
+
+
+
 
                     <script type="text/javascript">
                         makePie({
@@ -477,37 +509,14 @@
                             nv.utils.windowResize(chart.update);
                             return chart;
                         });</script>
-                    <div class="graph graph01" id="graph01">
-                        <svg></svg>
-                    </div>
 
-                    <div class="graph graph02" id="graph02">
-                        <svg id="part01"></svg>
-                        <svg id="part02"></svg>
-                    </div>
 
-                    <div class="graph graph03" id="graph03">
-                        <svg></svg>
-                    </div>
 
-                    <div class="graph graph04" id="graph04">
-                        <svg></svg>
-                    </div>
+
+
+
+
                     <!-- end of dash elements -->
-                    <!-- start of packery test box -->
-                    <div id="packery-test" class="sah">
-                        <div class="item" style="background-color: firebrick;">firebrick<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: orange;">orange<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: darkorchid;">darkorchid<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: royalblue;">royalblue<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: khaki;">khaki<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: navajowhite;">navajowhite<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: tomato;">tomato<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: fuchsia;">fuchsia<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: forestgreen;">forestgreen<span class="lock">LOCK ME</span></div>
-                        <div class="item" style="background-color: orchid;">orchid<span class="lock">LOCK ME</span></div>
-
-                    </div>
 
 
                 </div>
@@ -520,10 +529,10 @@
                     var pckry = new Packery(container, {
                         itemSelector: '.item',
                         containerStyle: null,
-                        columnWidth: 150,
-                        rowHeight: 150,
+                        columnWidth: 1,
+                        rowHeight: 1,
                         stamp: '.stamp',
-                        gutter: 5
+                        gutter: 10
                     });
 
                     var itemElems = pckry.getItemElements();
@@ -577,7 +586,7 @@
                             <div class="vdevs">
                                 <div class="vdev-wrap">
                                     <fieldset class="vdev-border vdev01">
-                                        <legend class="vdev-border vdev01"><span class="minimize">-</span>Device VDEV01</legend>
+                                        <legend class="vdev-border vdev01"><span class="minimize">[-]</span>Device VDEV01</legend>
                                         <div class="vdev-group">
                                             <div class="vdev-name">VDEV VDEV01</div>
                                             <div class="vdev-controls">
@@ -596,7 +605,7 @@
                                 </div>
                                 <div class="vlog-wrap">
                                     <fieldset class="vdev-border cache">
-                                        <legend class="vdev-border cache"><span class="minimize">-</span>Device CACHE</legend>
+                                        <legend class="vdev-border cache"><span class="minimize">[-]</span>Device CACHE</legend>
                                         <div class="vdev-group">
                                             <div class="vdev-name">VDEV CACHE</div>
                                             <div class="vdev-controls">
@@ -617,7 +626,7 @@
 
                                 <div class="vdev-wrap">
                                     <fieldset class="vdev-border vdev02">
-                                        <legend class="vdev-border vdev02"><span class="minimize">-</span>Device VDEV02</legend>
+                                        <legend class="vdev-border vdev02"><span class="minimize">[-]</span>Device VDEV02</legend>
                                         <div class="vdev-group">
                                             <div class="vdev-name">VDEV VDEV02</div>
                                             <div class="vdev-controls">
@@ -636,7 +645,7 @@
                                 </div>
                                 <div class="vlog-wrap">
                                     <fieldset class="vdev-border logs">
-                                        <legend class="vdev-border logs"><span class="minimize">-</span>Device LOGS</legend>
+                                        <legend class="vdev-border logs"><span class="minimize">[-]</span>Device LOGS</legend>
                                         <div class="vdev-group">
                                             <div class="vdev-name">VDEV LOGS</div>
                                             <div class="vdev-controls">

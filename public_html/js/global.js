@@ -156,8 +156,6 @@ function callPckryLayout()
 
 $(document).ready(function() {
 
-    showAndHide('packery-test');
-
     $("button.close").click(function() {
         $("#msg-panel").fadeOut("fast", function() {
             $("#msg-panel").removeClass();
@@ -188,13 +186,13 @@ $(document).ready(function() {
 
     $(".minimize").click(function(){
         $(this).parent("legend").next(".vdev-group").slideToggle('slow');
-         if ($(this).text === "+")
+         if ($(this).text() === "[+]")
             {
-                $(this).text("-");
+                $(this).text("[-]");
             }
             else
             {
-                $(this).text("+");
+                $(this).text("[+]");
             }
     });
 
