@@ -25,6 +25,39 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 
+.horizontal-gradient (@startColor: black, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.vertical-gradient (@startColor: black, @endColor: white) {
+    // IE9 prep
+    @dataPrefix: ~"url(data:image/svg+xml;base64,";
+    @dataSuffix: ~")";
+    @dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="@{startColor}" offset="0"/><stop stop-color="@{endColor}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
+    @b64Out: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataPrefix}','@{dataContent}','@{dataSuffix}')`;
+
+    background-color: mix(@startColor, @endColor, 60%); // Base solid colour fallback
+    background-image: ~"@{b64Out}"; // IE9
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // The standard
+    background-repeat: repeat-x;
+}
+.round-corner (@rcradius: 5px ){
+    -moz-border-radius:@rcradius;
+    -webkit-border-radius: @rcradius;
+    border-radius: @rcradius;
+    -khtml-border-radius: @rcradius;
+}
+
 html, body {
     height: 100%;
 }
@@ -263,16 +296,6 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     position: relative;
 }
 
-
-.horizontal-gradient (@startColor: black, @endColor: white) {
-    background-color: @startColor;
-    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
-    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
-    background-image: -moz-linear-gradient(left, @startColor, @endColor);
-    background-image: -ms-linear-gradient(left, @startColor, @endColor);
-    background-image: -o-linear-gradient(left, @startColor, @endColor);
-}
-
 #blue-div
 { 
     background-image: url("../img/dots.png");
@@ -309,30 +332,38 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 
 .table
 {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #d3d3d3;        
+    overflow:hidden;   
+    .round-corner(7px);
 }
 
 .table > thead > tr > th {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #272727;
     vertical-align: bottom;
-    background-color: darken(@menu-color, 20%);
+    //background-color: darken(@menu-color, 25%);
+    .vertical-gradient(darken(@menu-color, 5%),darken(@menu-color, 25%));
+    color: lighten(@menu-color, 10%);
 }
 
 .table > tbody > tr > td {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #999999;
     vertical-align: bottom;
 }
 
 .table > tbody > tr.odd > td {
-    background-color: lighten(@menu-color, 8%);
+    background-color: lighten(@menu-color, 10%);
+     //.vertical-gradient(lighten(@menu-color, 14%),lighten(@menu-color, 8%));
 }    
 
 .table > tbody > tr.even > td {
-    background-color: lighten(@menu-color, 4%);
+    background-color: lighten(@menu-color, 5%);
+    //.vertical-gradient(lighten(@menu-color, 6%),lighten(@menu-color, 4%));
 }   
 
 .table > tbody > tr:hover > td {
-    background-color: darken(@menu-color, 10%);
+    //background-color: darken(@menu-color, 0%);
+    .vertical-gradient(darken(@menu-color, 5%),darken(@menu-color, 0%));
+    
 }
 
 .minimize {
