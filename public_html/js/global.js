@@ -185,13 +185,13 @@ function getParametrs()
 
 $(document).ready(function() {
 
+    showAndHide(getParametrs());
+    
     $("button.close").click(function() {
         $("#msg-panel").fadeOut("fast", function() {
             $("#msg-panel").removeClass();
         });
     });
-
-    showAndHide(getParametrs());
 
     d3.selectAll(".arc").on("click", function() {
         alert(d3.select(this).select("text").attr("data-link") + " was clicked");
