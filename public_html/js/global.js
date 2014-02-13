@@ -186,6 +186,18 @@ $(document).ready(function() {
     });
 
 
+    $(".minimize").click(function(){
+        $(this).parent("legend").next(".vdev-group").slideToggle('slow');
+         if ($(this).text === "+")
+            {
+                $(this).text("-");
+            }
+            else
+            {
+                $(this).text("+");
+            }
+    });
+
     $("#blue-div").click(function() {
         if ($("#logo").hasClass("min"))
         {

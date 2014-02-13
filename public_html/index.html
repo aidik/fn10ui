@@ -417,72 +417,84 @@
                             </div>
 
                             <div class="vdevs">
-                                <fieldset class="vdev-border vdev01">
-                                    <legend class="vdev-border vdev01">Device VDEV01</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV VDEV01</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                        </button>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="vdev-border cache">
-                                    <legend class="vdev-border cache">Device CACHE</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV CACHE</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                <div class="vdev-wrap">
+                                    <fieldset class="vdev-border vdev01">
+                                        <legend class="vdev-border vdev01"><span class="minimize">-</span>Device VDEV01</legend>
+                                        <div class="vdev-group">
+                                            <div class="vdev-name">VDEV VDEV01</div>
+                                            <div class="vdev-controls">
+                                                <select>
+                                                    <option value="raidZ1">RaidZ1</option>
+                                                    <option value="raidz2">RaidZ2</option>
+                                                    <option value="stripe">Stripe</option>
+                                                    <option value="mirror">Mirror</option>                                    
+                                                </select>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="vlog-wrap">
+                                    <fieldset class="vdev-border cache">
+                                        <legend class="vdev-border cache"><span class="minimize">-</span>Device CACHE</legend>
+                                        <div class="vdev-group">
+                                            <div class="vdev-name">VDEV CACHE</div>
+                                            <div class="vdev-controls">
+                                                <select>
+                                                    <option value="raidZ1">RaidZ1</option>
+                                                    <option value="raidz2">RaidZ2</option>
+                                                    <option value="stripe">Stripe</option>
+                                                    <option value="mirror">Mirror</option>                                    
+                                                </select>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
 
-                                        </button>
-                                    </div>
-                                </fieldset>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
 
-                                <fieldset class="vdev-border vdev02">
-                                    <legend class="vdev-border vdev02">Device VDEV02</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV VDEV02</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                        </button>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="vdev-border logs">
-                                    <legend class="vdev-border logs">Device LOGS</legend>
-                                    <div class="vdev-group">+/-</div>
-                                    <div class="vdev-name">VDEV LOGS</div>
-                                    <div class="vdev-controls">
-                                        <select>
-                                            <option value="raidZ1">RaidZ1</option>
-                                            <option value="raidz2">RaidZ2</option>
-                                            <option value="stripe">Stripe</option>
-                                            <option value="mirror">Mirror</option>                                    
-                                        </select>
-                                        <button type="button" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>Disks
-                                        </button>
-                                    </div>
-                                </fieldset>
+                                <div class="vdev-wrap">
+                                    <fieldset class="vdev-border vdev02">
+                                        <legend class="vdev-border vdev02"><span class="minimize">-</span>Device VDEV02</legend>
+                                        <div class="vdev-group">
+                                            <div class="vdev-name">VDEV VDEV02</div>
+                                            <div class="vdev-controls">
+                                                <select>
+                                                    <option value="raidZ1">RaidZ1</option>
+                                                    <option value="raidz2">RaidZ2</option>
+                                                    <option value="stripe">Stripe</option>
+                                                    <option value="mirror">Mirror</option>                                    
+                                                </select>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="vlog-wrap">
+                                    <fieldset class="vdev-border logs">
+                                        <legend class="vdev-border logs"><span class="minimize">-</span>Device LOGS</legend>
+                                        <div class="vdev-group">
+                                            <div class="vdev-name">VDEV LOGS</div>
+                                            <div class="vdev-controls">
+                                                <select>
+                                                    <option value="raidZ1">RaidZ1</option>
+                                                    <option value="raidz2">RaidZ2</option>
+                                                    <option value="stripe">Stripe</option>
+                                                    <option value="mirror">Mirror</option>                                    
+                                                </select>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>Disks
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
                                 <button type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
                                 </button>
