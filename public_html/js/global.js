@@ -1,7 +1,14 @@
 function showAndHide(id)
 {
-    $(".sah").hide();
-    $("#" + id + ".sah").fadeIn("fast");
+    if (id === undefined)
+    {
+        return;
+    }
+    else
+    {
+        $(".sah").hide();
+        $("#" + id + ".sah").fadeIn("fast");
+    }
 }
 
 function showMsgPanel(type, msg)
@@ -154,6 +161,28 @@ function callPckryLayout()
     pckry.layout()
 }
 
+function getParametrs()
+{
+    var urlParams;
+    (window.onpopstate = function() {
+        var match,
+                pl = /\+/g, // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function(s) {
+                    return decodeURIComponent(s.replace(pl, " "));
+                },
+                query = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+            urlParams[decode(match[1])] = decode(match[2]);
+    })();
+
+    return urlParams['id'];
+}
+
+
+
 $(document).ready(function() {
 
     $("button.close").click(function() {
@@ -161,6 +190,8 @@ $(document).ready(function() {
             $("#msg-panel").removeClass();
         });
     });
+
+    showAndHide(getParametrs());
 
     d3.selectAll(".arc").on("click", function() {
         alert(d3.select(this).select("text").attr("data-link") + " was clicked");
@@ -184,16 +215,16 @@ $(document).ready(function() {
     });
 
 
-    $(".minimize").click(function(){
+    $(".minimize").click(function() {
         $(this).parent("legend").next(".vdev-group").slideToggle('slow');
-         if ($(this).text() === "[+]")
-            {
-                $(this).text("[-]");
-            }
-            else
-            {
-                $(this).text("[+]");
-            }
+        if ($(this).text() === "[+]")
+        {
+            $(this).text("[-]");
+        }
+        else
+        {
+            $(this).text("[+]");
+        }
     });
 
     $("#blue-div").click(function() {
