@@ -40,14 +40,14 @@
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="menu-anchor-text">Groups and Users</span></a></li>
                     <li><a data-toggle="collapse" href="#collapseStorage"><span class="glyphicon glyphicon-hdd"></span><span class="menu-anchor-text">Storage</span></a>
                         <ul id="collapseStorage" class="nav nav-pills nav-stacked collapse">
-                            <li><a href="Javascript: showAndHide('volman');"><span class="glyphicon glyphicon-folder-close"></span><span class="submenu-anchor-text">Volume Manager</span></a></li>
+                            <li><a href="Javascript: showAndHide('volmanBegin');"><span class="glyphicon glyphicon-folder-close"></span><span class="submenu-anchor-text">Volume Manager</span></a></li>
                             <li><a href="Javascript: showAndHide('drives');"><span class="glyphicon glyphicon-folder-close"></span><span class="submenu-anchor-text">Drives</span></a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span><span class="submenu-anchor-text">ZFS Snapshot</span></a></li>
+                            <li><a href="Javascript: showAndHide('volman');"><span class="glyphicon glyphicon-screenshot"></span><span class="submenu-anchor-text">ZFS Snapshot</span></a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span><span class="submenu-anchor-text">ZFS Replication</span></a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="submenu-anchor-text">Periodic snapshot task</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-globe"></span><span class="menu-anchor-text">Services</span></a></li>
+                    <li><a href="Javascript: showAndHide('services');"><span class="glyphicon glyphicon-globe"></span><span class="menu-anchor-text">Services</span></a></li>
                     <li><a data-toggle="collapse" href="#collapseSettings"><span class="glyphicon glyphicon-cog"></span><span class="menu-anchor-text">Settings</span></a>
                         <ul id="collapseSettings" class="nav nav-pills nav-stacked collapse">
                             <li><a href="#"><span class="glyphicon glyphicon-wrench"></span><span class="submenu-anchor-text">System settings</span></a></li>
@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- start of dashboard -->
-                <div id='dashboard' class='sah'>
+                <div id='volmanBegin' class='sah'>
                     toto je tělo?
                     <form>
                         <fieldset>               
@@ -96,6 +96,7 @@
                                     <li><a href="#">Manual import volume</a></li>
                                 </ul>
                             </div>
+                          <!--
                             <button type="button" class="btn btn-info">
                                 <span class="glyphicon glyphicon-edit"></span>Edit
                             </button>
@@ -121,6 +122,7 @@
                                 <span class="glyphicon glyphicon-info-sign"></span>Volume Status
                             </button>
 
+                          -->
 
                             <div class="row">
                                 <div class="col-lg-3">
@@ -160,6 +162,7 @@
                                         <th>Available</th>
                                         <th>Size</th>
                                         <th>Status</th>
+                                        <th>Settings</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -170,7 +173,38 @@
                                         <td>459.5KiB (0%)</td>
                                         <td>10.1TiB</td>
                                         <td>10.1TiB</td>
-                                        <td>HEALTY</td>                                                
+                                        <td>HEALTY</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="even">
                                         <td> - home</td>
@@ -179,7 +213,38 @@
                                         <td>459.5KiB (0%)</td>
                                         <td>10.1TiB</td>
                                         <td>10.1TiB</td>
-                                        <td>HEALTY</td>                                                
+                                        <td>HEALTY</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="odd">
                                         <td> - media</td>
@@ -188,7 +253,38 @@
                                         <td>459.5KiB (0%)</td>
                                         <td>10.1TiB</td>
                                         <td>10.1TiB</td>
-                                        <td>HEALTY</td>                                                
+                                        <td>HEALTY</td> 
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="even">
                                         <td> - office</td>
@@ -197,7 +293,38 @@
                                         <td>459.5KiB (0%)</td>
                                         <td>10.1TiB</td>
                                         <td>10.1TiB</td>
-                                        <td>HEALTY</td>                                                
+                                        <td>HEALTY</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="odd">
                                         <td> - ubuntu-13_10</td>
@@ -206,10 +333,39 @@
                                         <td>459.5KiB (0%)</td>
                                         <td>10.1TiB</td>
                                         <td>10.1TiB</td>
-                                        <td>HEALTY</td>                                                
+                                        <td>HEALTY</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
-
-
                                 </tbody>
 
 
@@ -217,7 +373,8 @@
                         </fieldset>
 
                     </form>
-
+                </div>
+                <div id='dashboard' class='sah'>
                     <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
 
 
@@ -337,25 +494,26 @@
                         <svg></svg>
                     </div>
                     <!-- end of dash elements -->
+                    <!-- start of packery test box -->
+                    <div id="packery-test" class="sah">
+                        <div class="item" style="background-color: firebrick;">firebrick<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: orange;">orange<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: darkorchid;">darkorchid<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: royalblue;">royalblue<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: khaki;">khaki<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: navajowhite;">navajowhite<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: tomato;">tomato<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: fuchsia;">fuchsia<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: forestgreen;">forestgreen<span class="lock">LOCK ME</span></div>
+                        <div class="item" style="background-color: orchid;">orchid<span class="lock">LOCK ME</span></div>
+
+                    </div>
 
 
                 </div>
                 <!-- end of dashboard -->
 
-                <!-- start of packery test box -->
-                <div id="packery-test" class="sah">
-                    <div class="item" style="background-color: firebrick;">firebrick<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: orange;">orange<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: darkorchid;">darkorchid<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: royalblue;">royalblue<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: khaki;">khaki<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: navajowhite;">navajowhite<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: tomato;">tomato<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: fuchsia;">fuchsia<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: forestgreen;">forestgreen<span class="lock">LOCK ME</span></div>
-                    <div class="item" style="background-color: orchid;">orchid<span class="lock">LOCK ME</span></div>
 
-                </div>
 
                 <script>
                     var container = document.querySelector('#packery-test');
@@ -577,7 +735,7 @@
                 <!-- end of drives -->
 
                 <!-- start of services  -->
-                <div class="services">
+                <div id="services" class="sah services">
                     <h1>Services</h1>
                     <div class="btn-group">
                         <button type="button" class="btn btn-default">Status</button>
