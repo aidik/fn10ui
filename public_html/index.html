@@ -81,58 +81,302 @@
 
                 <!-- start of dashboard -->
                 <div id='volmanBegin' class='sah'>
-                    <ul>
-                        <li>Honk 
-                            <span class="VOLtype">Volume</span>
-                            <span class="VOLused">459.5KiB (0%)</span>
-                            <span class="VOLavailable">10.1TiB</span>
-                            <span class="VOLsettings">Settings</span>
-                            <ul>
-                                <li>home
-                                    <span class="VOLtype">Dataset</span>
-                                    <span class="VOLused">459.5KiB (0%)</span>
-                                    <span class="VOLavailable">10.1TiB</span>
-                                    <span class="VOLsettings">Settings</span></li>
-                                <li>media
-                                    <span class="VOLtype">Dataset</span>
-                                    <span class="VOLused">459.5KiB (0%)</span>
-                                    <span class="VOLavailable">10.1TiB</span>
-                                    <span class="VOLsettings">Settings</span>
-                                    <ul>
-                                        <li>John <span class="VOLtype">Dataset</span>
-                                            <span class="VOLused">459.5KiB (0%)</span>
-                                            <span class="VOLavailable">10.1TiB</span>
-                                            <span class="VOLsettings">Settings</span>
-                                        </li>
-                                        <li>Hans
-                                            <span class="VOLtype">Dataset</span>
-                                            <span class="VOLused">459.5KiB (0%)</span>
-                                            <span class="VOLavailable">10.1TiB</span>
-                                            <span class="VOLsettings">Settings</span>
-                                        </li>
-                                        <li>Franz
-                                            <span class="VOLtype">Dataset</span>
-                                            <span class="VOLused">459.5KiB (0%)</span>
-                                            <span class="VOLavailable">10.1TiB</span>
-                                            <span class="VOLsettings">Settings</span>
-                                        </li>
-                                    </ul></li>
-                                <li>office
-                                    <span class="VOLtype">Dataset</span>
-                                    <span class="VOLused">459.5KiB (0%)</span>
-                                    <span class="VOLavailable">10.1TiB</span>
-                                    <span class="VOLsettings">Settings</span>
-                                </li>
-                                <li>ubuntu-13_10
-                                    <span class="VOLtype">Jail</span>
-                                    <span class="VOLused">459.5KiB (0%)</span>
-                                    <span class="VOLavailable">10.1TiB</span>
-                                    <span class="VOLsettings">Settings</span>
-                                </li>
-                            </ul>
+                    <div id="list-test">
+                        <ul>
+                            <li>Honk 
+                                <div class="VOLmeta">
+                                    <span class="VOLtype">Volume</span>
+                                    <span class="VOLused">400 GiB (5%)</span>
+                                    <span class="VOLavailable">7.9 TiB</span>
+                                    <span class="VOLsettings dropdown">
+                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                            </li>
+                                        </ul>
+                                    </span>
 
-                        </li>
-                    </ul>
+                                </div>
+                                <ul>
+                                    <li>home
+                                        <div class="VOLmeta">
+                                            <span class="VOLtype">Dataset</span>
+                                            <span class="VOLused">100 GiB (25%)</span>
+                                            <span class="VOLavailable">7.9 TiB</span>
+                                            <span class="VOLsettings dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div></li>
+                                    <li>media
+                                        <div class="VOLmeta">
+                                            <span class="VOLtype">Dataset</span>
+                                            <span class="VOLused">100 GiB (25%)</span>
+                                            <span class="VOLavailable">7.9 TiB</span>
+                                            <span class="VOLsettings dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                        <ul>
+                                            <li>John 
+                                                <div class="VOLmeta">
+                                                    <span class="VOLtype">Dataset</span>
+                                                    <span class="VOLused">459 KiB (0%)</span>
+                                                    <span class="VOLavailable">7.9 TiB</span>
+                                                    <span class="VOLsettings dropdown">
+                                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>Hans
+                                                <div class="VOLmeta">
+                                                    <span class="VOLtype">Dataset</span>
+                                                    <span class="VOLused">75 GiB (75%)</span>
+                                                    <span class="VOLavailable">7.9 TiB</span>
+                                                    <span class="VOLsettings dropdown">
+                                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>Franz
+                                                <div class="VOLmeta">
+                                                    <span class="VOLtype">Dataset</span>
+                                                    <span class="VOLused">25 GiB (25%)</span>
+                                                    <span class="VOLavailable">7.9 TiB</span>
+                                                    <span class="VOLsettings dropdown">
+                                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                            </li>
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                            </li> 
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul></li>
+                                    <li>office
+                                        <div class="VOLmeta">
+                                            <span class="VOLtype">Dataset</span>
+                                            <span class="VOLused">200 GiB (50%)</span>
+                                            <span class="VOLavailable">7.9 TiB</span>
+                                            <span class="VOLsettings dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>ubuntu-13_10
+                                        <div class="VOLmeta">
+                                            <span class="VOLtype">Jail</span>
+                                            <span class="VOLused">459.5KiB (0%)</span>
+                                            <span class="VOLavailable">7.9 TiB</span>
+                                            <span class="VOLsettings dropdown">
+                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                                    </li> 
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
                     <form>
                         <fieldset>               
                             <div class="btn-group">
