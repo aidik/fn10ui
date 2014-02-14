@@ -187,6 +187,8 @@ $(document).ready(function() {
 
     showAndHide(getParametrs());
     
+    $( ".jbod " ).selectable();
+    
     $("button.close").click(function() {
         $("#msg-panel").fadeOut("fast", function() {
             $("#msg-panel").removeClass();
