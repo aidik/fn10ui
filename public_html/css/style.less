@@ -356,7 +356,7 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 
 .table > tbody > tr.odd > td {
     background-color: lighten(@menu-color, 10%);
-     //.vertical-gradient(lighten(@menu-color, 14%),lighten(@menu-color, 8%));
+    //.vertical-gradient(lighten(@menu-color, 14%),lighten(@menu-color, 8%));
 }    
 
 .table > tbody > tr.even > td {
@@ -367,11 +367,52 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 .table > tbody > tr:hover > td {
     //background-color: darken(@menu-color, 0%);
     .vertical-gradient(darken(@menu-color, 5%),darken(@menu-color, 0%));
-    
+
 }
 
 .minimize {
     padding-right: 5px;
     cursor: pointer;
     font-weight: normal;
+}
+
+#list-test ul
+{
+    background-color: firebrick;
+    .round-corner;
+    position: relative;
+}
+
+#list-test ul > li > ul
+{
+    background-color: yellow;
+    margin-right: 30px;
+
+}
+
+#list-test ul > li > ul > li > ul
+{
+    background-color: darksalmon;
+    margin-right: 30px;
+
+}
+
+.VOLmeta
+{
+    right: 5px;
+    margin-top: -20px;
+    position: absolute;
+}
+
+#list-test .dropdown-menu
+{
+    position: absolute;
+    left: -170px;
+    top: 0;
+    background-color: @menu-color;
+}
+
+.VOLmeta span+span
+{
+    padding-left: 7px;
 }
