@@ -187,7 +187,7 @@ $(document).ready(function() {
 
     showAndHide(getParametrs());
     
-    $( ".jbod " ).selectable();
+    $( ".hdd-pack" ).selectable();
     
     $("button.close").click(function() {
         $("#msg-panel").fadeOut("fast", function() {
