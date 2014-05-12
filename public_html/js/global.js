@@ -200,15 +200,17 @@ $(document).ready(function() {
     });
 
     $(".lock").click(function() {
-        if ($(this).text() === 'LOCK ME')
+        if ($(this).hasClass("icon-unlocked"))
         {
-            $(this).text("LOCKED");
+            $(this).addClass("icon-lock");
+            $(this).removeClass("icon-unlocked");
             $(this).parent().addClass("stamp");
             pckry.stamp('.stamp');
         }
         else
         {
-            $(this).text("LOCK ME");
+            $(this).addClass("icon-unlocked");
+            $(this).removeClass("icon-lock");
             $(this).parent().removeClass("stamp");
             pckry.unstamp('.stamp');
             pckry.stamp('.stamp');
@@ -226,6 +228,23 @@ $(document).ready(function() {
         else
         {
             $(this).text("[+]");
+        }
+    });
+    
+    $("#dsh-lock").click(function() {
+        if ($(this).hasClass("icon-lock"))
+        {
+            $(this).removeClass("icon-lock");
+            $(this).addClass("icon-unlocked");
+            $(".dsh-item-set").hide();
+            $(".dsh-item-lock").show();
+        }
+        else
+        {
+            $(this).removeClass("icon-unlocked");
+            $(this).addClass("icon-lock");
+            $(".dsh-item-lock").hide();
+            $(".dsh-item-set").show();
         }
     });
 

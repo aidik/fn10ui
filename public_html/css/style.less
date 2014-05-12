@@ -293,7 +293,7 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     border: 1px solid #CCC;
     box-shadow: 0 1px 5px #CCC;
     .round-corner;
-    overflow: hidden;
+    /*overflow: hidden; */
     .vertical-gradient(@light-background, #f7f7f7);
 }
 
@@ -305,11 +305,12 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     cursor: pointer;
 }
 
-.item .dhb-item-header-icon
+.item .dsh-item-header-icon
 {
     position: absolute;
     right: 5px;
     top: 7px;
+
 }
 
 .lock
@@ -454,3 +455,14 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
     background-color: yellow;
 }
 
+#dsh-lock
+{
+    cursor: pointer;
+    font-size: 200%;
+
+}
+
+.dsh-item-lock
+{
+    display: none;
+}
