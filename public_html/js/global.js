@@ -186,9 +186,9 @@ function getParametrs()
 $(document).ready(function() {
 
     showAndHide(getParametrs());
-    
-    $( ".hdd-pack" ).selectable();
-    
+
+    $(".hdd-pack").selectable();
+
     $("button.close").click(function() {
         $("#msg-panel").fadeOut("fast", function() {
             $("#msg-panel").removeClass();
@@ -221,6 +221,8 @@ $(document).ready(function() {
 
     $(".minimize").click(function() {
         $(this).parent("legend").next(".vdev-group").slideToggle('slow');
+        $(this).parent("legend").siblings(".hdd-pack").slideToggle('slow');
+
         if ($(this).text() === "[+]")
         {
             $(this).text("[-]");
@@ -230,7 +232,19 @@ $(document).ready(function() {
             $(this).text("[+]");
         }
     });
-    
+
+    $(".selectAll").click(function() {
+         
+        if ($(this).is(':checked'))
+        {
+            $(this).parent("legend").siblings(".hdd-pack").children(".hdd").addClass("ui-selected");
+        }
+        else
+        {
+            $(this).parent("legend").siblings(".hdd-pack").children(".hdd").removeClass("ui-selected");
+        }
+    });
+
     $("#dsh-lock").click(function() {
         if ($(this).hasClass("icon-lock"))
         {

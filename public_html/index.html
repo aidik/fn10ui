@@ -676,14 +676,14 @@
                 <div id='dashboard' class='sah'>
 
                     <!-- start of packery test box -->
-                    
-                    
+
+
 
                     <div id="packery-test" class="">
                         <div class="item">
                             <header>
                                 <span class="name">Graph of Donut Consumption</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -703,14 +703,14 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div id="graph-test" style="margin: 0 auto; width: 350px; height: 150px;"></div>
                         </div>
                         <div class="item">
                             <header>
                                 <span class="name">A donut, oh yes!</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -730,14 +730,14 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div id="d3graph"></div>
                         </div>
                         <div class="item">
                             <header>
                                 <span class="name">Some average load</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -757,8 +757,8 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div class="graph graph01" id="graph01">
                                 <svg></svg>
                             </div>
@@ -766,7 +766,7 @@
                         <div class="item">
                             <header>
                                 <span class="name">Linear graph</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -786,8 +786,8 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div class="graph graph02" id="graph02">
                                 <svg id="part01"></svg>                                
                             </div>
@@ -795,7 +795,7 @@
                         <div class="item">
                             <header>
                                 <span class="name">Columns!</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -815,8 +815,8 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div class="graph graph03" id="graph03">
                                 <svg></svg>
                             </div>
@@ -824,7 +824,7 @@
                         <div class="item">
                             <header>
                                 <span class="name">Empty box!</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -844,8 +844,8 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div class="graph graph04" id="graph04">
                                 <svg></svg>
                             </div>
@@ -853,7 +853,7 @@
                         <div class="item">
                             <header>
                                 <span class="name">Empty box!</span>
-                                
+
                                 <span class="icon-unlocked lock dsh-item-header-icon dsh-item-lock"></span>
                                 <span class="dropdown dsh-item-header-icon dsh-item-set">
                                     <span data-toggle="dropdown" class="inputBarA dropdown-toggle glyphicon glyphicon-cog" title="Settings"></span>
@@ -873,16 +873,16 @@
                                         </li>                                        
                                     </ul>
                                 </span>
-                                
-                                </header>
+
+                            </header>
                             <div class="graph graph04" id="graph04">
                                 <svg></svg>
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    
+
+
+
                     <span id="dsh-lock" class="icon-lock"></span>
 
 
@@ -1012,7 +1012,7 @@
                     for (var i = 0, len = itemElems.length; i < len; i++) {
                         var elem = itemElems[i];
                         // make element draggable with Draggabilly
-                        var draggie = new Draggabilly(elem, { handle: ".item header" });
+                        var draggie = new Draggabilly(elem, {handle: ".item header"});
                         // bind Draggabilly events to Packery
                         pckry.bindDraggabillyEvents(draggie);
                     }
@@ -1147,14 +1147,17 @@
                 <!-- start of drives -->
                 <div id="drives" class="sah drives">
                     <div class="btn-group">
+                        <span class="btn btn-info no-click">Sort by:</span>
                         <button type="button" class="btn btn-default">Type</button>
                         <button type="button" class="btn btn-default">Capacity</button>
                         <button type="button" class="btn btn-default">JBOD</button>
                     </div>
                     <fieldset class="jbod jbod01">
-                        <legend class="jbod jbod01">JBOD 01</legend>
-                        <div class="drives-group">+/-</div>
-                        <div class="drives-select">sel all</div>                        
+                        <legend class="jbod jbod01">
+                            <input type="checkbox" class="selectAll">
+                            <span class="minimize">[-]</span>
+                            JBOD 01
+                        </legend>
                         <div class="hdd-pack">
                             <div class="hdd 01"></div>
                             <div class="hdd 02"></div>
@@ -1170,9 +1173,11 @@
                         </div>
                     </fieldset>
                     <fieldset class="jbod jbod02">
-                        <legend class="jbod jbod02">JBOD 02</legend>
-                        <div class="drives-group">+/-</div>
-                        <div class="drives-select">sel all</div>
+                        <legend class="jbod jbod02">
+                            <input type="checkbox" class="selectAll">
+                            <span class="minimize">[-]</span>
+                            JBOD 02
+                        </legend>
                         <div class="hdd-pack">
                             <div class="hdd 01"></div>
                             <div class="hdd 02"></div>
@@ -1197,9 +1202,11 @@
                         </div>
                     </fieldset>
                     <fieldset class="jbod jbod03">
-                        <legend class="jbod jbod03">JBOD 03</legend>
-                        <div class="drives-group">+/-</div>
-                        <div class="drives-select">sel all</div>
+                        <legend class="jbod jbod03">
+                            <input type="checkbox" class="selectAll">    
+                            <span class="minimize">[-]</span>
+                            JBOD 03
+                        </legend>
                         <div class="hdd-pack">
                             <div class="hdd 01"></div>
                             <div class="hdd 02"></div>
@@ -1263,205 +1270,205 @@
                 </div>
                 <!-- end of services -->
                 <div id="users" class="sah users">
-                     <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>User ID</th>
-                                        <th>Username</th>
-                                        <th>Full Name</th>
-                                        <th>E-mail</th>
-                                        <th>Primary group</th>
-                                        <th>Home directory</th>
-                                        <th>Shell</th>
-                                        <th>Built-in user</th>
-                                        <th>Disable password login</th>
-                                        <th>Lock user</th>
-                                        <th>Permit Sudo</th>
-                                        <th>Settings</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd">
-                                        <td>0</td>
-                                        <td>sirdik</td>
-                                        <td>Ladislav Sirovy</td>
-                                        <td>ladislav@ixsystems.com</td>
-                                        <td>roots</td>
-                                        <td>/home/sirdik</td>
-                                        <td>/bin/csh/</td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user no">No</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
-                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="even">
-                                       <td>0</td>
-                                        <td>root</td>
-                                        <td>Mr. Root</td>
-                                        <td>mr@root.org</td>
-                                        <td>roots</td>
-                                        <td>/home/root</td>
-                                        <td>/bin/csh/</td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user no">No</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
-                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td>0</td>
-                                        <td>root</td>
-                                        <td>Mr. Root</td>
-                                        <td>mr@root.org</td>
-                                        <td>roots</td>
-                                        <td>/home/root</td>
-                                        <td>/bin/csh/</td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user no">No</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
-                                                <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td>0</td>
-                                        <td>root</td>
-                                        <td>Mr. Root</td>
-                                        <td>mr@root.org</td>
-                                        <td>roots</td>
-                                        <td>/home/root</td>
-                                        <td>/bin/csh/</td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user no">No</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td><span class="user yes">Yes</span></td>
-                                        <td>
-                                            <div class="dropdown">
-                                                  <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
-                                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                       
-                                                    <li role="presentation" class="dropdown-header">Settings</li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
-                                                    </li>
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
-                                                    </li> 
-                                                    <li role="presentation">
-                                                        <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>                         
-                                </tbody>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Username</th>
+                                <th>Full Name</th>
+                                <th>E-mail</th>
+                                <th>Primary group</th>
+                                <th>Home directory</th>
+                                <th>Shell</th>
+                                <th>Built-in user</th>
+                                <th>Disable password login</th>
+                                <th>Lock user</th>
+                                <th>Permit Sudo</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td>0</td>
+                                <td>sirdik</td>
+                                <td>Ladislav Sirovy</td>
+                                <td>ladislav@ixsystems.com</td>
+                                <td>roots</td>
+                                <td>/home/sirdik</td>
+                                <td>/bin/csh/</td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user no">No</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td>0</td>
+                                <td>root</td>
+                                <td>Mr. Root</td>
+                                <td>mr@root.org</td>
+                                <td>roots</td>
+                                <td>/home/root</td>
+                                <td>/bin/csh/</td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user no">No</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td>0</td>
+                                <td>root</td>
+                                <td>Mr. Root</td>
+                                <td>mr@root.org</td>
+                                <td>roots</td>
+                                <td>/home/root</td>
+                                <td>/bin/csh/</td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user no">No</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a>
+                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                    
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td>0</td>
+                                <td>root</td>
+                                <td>Mr. Root</td>
+                                <td>mr@root.org</td>
+                                <td>roots</td>
+                                <td>/home/root</td>
+                                <td>/bin/csh/</td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user no">No</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td><span class="user yes">Yes</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="inputBarA dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                        <ul class="dropdown-menu dropup" role="menu" aria-labelledby="dLabel">                                                       
+                                            <li role="presentation" class="dropdown-header">Settings</li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-hdd"></span>View disks</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-camera"></span>Create Snapshot</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-list-alt"></span>Create ZFS dataset</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-flash"></span>Create ZVOL</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-lock"></span>Change permission</a>
+                                            </li> 
+                                            <li role="presentation">
+                                                <a role="menuitem" href="#"><span class="glyphicon glyphicon-info-sign"></span>Volume Status</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>                         
+                        </tbody>
 
 
-                            </table>    
+                    </table>    
                 </div>
 
 
