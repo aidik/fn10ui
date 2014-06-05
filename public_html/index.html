@@ -69,17 +69,24 @@
             </div>
             <div id="content">
                 <div class="row row-set post-it-note">
-                    <div id="msg-panel-wrap" class="col-md-9">
+                    <div id="msg-panel-wrap" class="col-md-10">
+                        <div>
+                            <div class="fn-left">Creation of Pool ABC:</div>
+                            <div class="progress fn-left" style="margin-bottom: 0; margin-left: 10px; width: 350px;">
+                                <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success"><span class="sr-only">40% Complete (success)</span></div>
+                            </div>
+                        </div>
                         <div id="msg-panel" class="">
                             <button class="close" aria-hidden="true" type="button">×</button>
                             <span class="msg">Gratulujeme nastavili jsme to i ono.</span>
                         </div>
                     </div>
 
-                    <div id="top-icon-bar" class="col-md-3">
-                        <a href="#"><span class="glyphicon glyphicon-warning-sign"><span class="red-alert-box">2</span></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-info-sign"><span class="red-alert-box">1</span></span></a>                        
-                        <a href="#"><span class="">Hans & Franz</span></a>
+                    <div id="top-icon-bar" class="col-md-2">
+
+                        <a href="#"><span class="glyphicon glyphicon-warning-sign"><span class="not-box red-box">2</span></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-info-sign"><span class="not-box blue-box">1</span></span></a>                        
+                        <a href="#"><span style="padding-left: 15px;">Hans & Franz</span></a>
                     </div>
                 </div>
 
@@ -1068,7 +1075,7 @@
                                                     <option value="stripe">Stripe</option>
                                                     <option value="mirror">Mirror</option>                                    
                                                 </select><br />
-                                                <button type="button" class="btn btn-default">
+                                                <button type="button" class="btn btn-default btn-right">
                                                     <span class="glyphicon glyphicon-plus-sign"></span> Disks
                                                 </button>
                                             </div>
@@ -1087,7 +1094,7 @@
                                                     <option value="stripe">Stripe</option>
                                                     <option value="mirror">Mirror</option>                                    
                                                 </select><br />
-                                                <button type="button" class="btn btn-default">
+                                                <button type="button" class="btn btn-default btn-right">
                                                     <span class="glyphicon glyphicon-plus-sign"></span> Disks
 
                                                 </button>
@@ -1108,7 +1115,7 @@
                                                     <option value="stripe">Stripe</option>
                                                     <option value="mirror">Mirror</option>                                    
                                                 </select><br />
-                                                <button type="button" class="btn btn-default">
+                                                <button type="button" class="btn btn-default btn-right">
                                                     <span class="glyphicon glyphicon-plus-sign"></span> Disks
                                                 </button>
                                             </div>
@@ -1127,15 +1134,15 @@
                                                     <option value="stripe">Stripe</option>
                                                     <option value="mirror">Mirror</option>                                    
                                                 </select><br />
-                                                <button type="button" class="btn btn-default">
+                                                <button type="button" class="btn btn-default btn-right">
                                                     <span class="glyphicon glyphicon-plus-sign"></span> Disks
                                                 </button>
                                             </div>
                                         </div>
                                     </fieldset>
                                 </div>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-plus-sign"></span>Add VDEV
+                                <button type="button" class="btn btn-success btn-right">
+                                    <span class="glyphicon glyphicon-plus-sign"></span> Add VDEV
                                 </button>
                             </div>
 
@@ -1150,7 +1157,7 @@
                         <span class="btn btn-info no-click">Sort by:</span>
                         <button type="button" class="btn btn-default">Type</button>
                         <button type="button" class="btn btn-default">Capacity</button>
-                        <button type="button" class="btn btn-default">JBOD</button>
+                        <button type="button" class="btn btn-default active">JBOD</button>
                     </div>
                     <fieldset class="jbod jbod01">
                         <legend class="jbod jbod01">
@@ -1221,8 +1228,8 @@
                             <div class="hdd 11"></div>
                         </div>
                     </fieldset>
-                    <p>
-                        <button type="button" class="btn btn-primary btn-lg">OK</button>
+                    <p style="float: right; padding-right: 15px;">
+                        <button type="button" class="btn btn-success btn-lg">OK</button>
                         <button type="button" class="btn btn-default btn-sm">Cancel</button>
                     </p>
                 </div>

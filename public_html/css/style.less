@@ -479,31 +479,56 @@ legend.vdev-border, legend.volume-manager, legend.jbod{
 {
     color: #272727;
     font-size: 125%;
-    padding: 0 5px;
+    padding: 0 10px;
     position: relative;
     top: 5px;
+    
 }
 
-#top-icon-bar a span.glyphicon .red-alert-box
+#top-icon-bar a span.glyphicon .not-box
 {
-    border: 3px solid #FF0000;
-    .round-corner(10px);
-    color: #FF0000;
-    font-size: 70%;
+    .round-corner (4px);
+    color: white;
+    font-size: 80%;
     font-weight: bold;
-    line-height: 11px;
-    padding-bottom: 2px;
+    padding: 2px 12px 4px 5px;
     position: absolute;
-    right: -7px;
+    right: -5px;
     text-align: center;
-    top: -4px;
+    top: -10px;
     width: 15px;
-   
 }
+
+.red-box
+{
+   background-color: #F68484; 
+}
+
+.blue-box
+{
+   background-color: #75B9E6; 
+}
+
+
 
 .btn-info.no-click:hover, .btn-info.no-click:focus, .btn-info.no-click:active {
     background-image: linear-gradient(to bottom, #5BC0DE 0%, #2AABD2 100%);
     background-repeat: repeat-x;
     border-color: #28A4C9;
     background-position: 0 0px;
+}
+
+.btn-right {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.fn-right
+{
+    float: right !important;
+}
+
+.fn-left
+{
+    float: left !important;
 }
