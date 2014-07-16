@@ -40,16 +40,21 @@
         </ul>
 
         <script type="text/javascript">
-        var viewModel  = {
-            notifications: [
-                {notification: 'Pool created.'},
-                {notification: 'Pool scrubed.'},
-                {notification: 'Admin loged in.'}
-                ]
-            };
+        var viewModel;
+        $.ajax
+        ({
+            type: "GET",
+            url: "http://78.102.182.176/api/v1.0/account/users/?format=json",
+            username: "root",
+            password: "meh",
+            cache: false,
+            data: {}
+         }).done(function( data ){
+         
+             viewModel = data;
+         });
 
-
-            ko.applyBindings(viewModel);
+        //ko.applyBindings(viewModel);
 
 
 
@@ -62,3 +67,5 @@
         
     </body>
 </html>
+
+
