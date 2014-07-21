@@ -40,6 +40,11 @@
             <li data-bind="text: bsdusr_username"></li>
         </ul>
 
+        <ul data-bind="foreach: users">
+            <input data-bind="value: bsdusr_username" /><br />
+        </ul>
+        <button data-bind="click: addUser">Add</button>
+
         <script type="text/javascript">
             function getUsers()
             {
@@ -53,7 +58,22 @@
                             dataType: "json"
                         });
             }
-            
+
+
+            function saveNewUser(data)
+            {
+                return $.ajax
+                        ({
+                            type: "POST",
+                            url: "http://78.102.182.176/api/v1.0/account/users/?format=json",
+                            username: "root",
+                            password: "meh",
+                            cache: false,
+                            dataType: "json",
+                            data: data
+                        });
+            }
+
             getUsers().done(function(results)
             {
                 var users = results;
