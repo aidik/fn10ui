@@ -23,6 +23,7 @@
         <script src="js/packery.pkgd.min.js" type="text/javascript"></script> 
         <script src="js/draggabilly.pkgd.min.js" type="text/javascript"></script>
         <script src='js/knockout-3.1.0.js' type='text/javascript'></script>
+        <script src='js/knockout.mapping-latest.js' type='text/javascript'></script>
         <script src="js/global.js" type="text/javascript"></script>
         <script src="js/less-1.7.0.min.js" type="text/javascript"></script>
 
@@ -33,38 +34,43 @@
     </head>
 
     <body>
-        
+
         <h2>Knockout list below</h2>
-        <ul data-bind="foreach: notifications">
-            <li data-bind="text: notification"></li>
+        <ul data-bind="foreach: users">
+            <li data-bind="text: bsdusr_username"></li>
         </ul>
 
         <script type="text/javascript">
-        var viewModel;
-        $.ajax
-        ({
-            type: "GET",
-            url: "http://78.102.182.176/api/v1.0/account/users/?format=json",
-            username: "root",
-            password: "meh",
-            cache: false,
-            data: {}
-         }).done(function( data ){
-         
-             viewModel = data;
-         });
-
-        //ko.applyBindings(viewModel);
-
-
+            function getUsers()
+            {
+                return $.ajax
+                        ({
+                            type: "GET",
+                            url: "http://78.102.182.176/api/v1.0/account/users/?format=json",
+                            username: "root",
+                            password: "meh",
+                            cache: false,
+                            dataType: "json"
+                        });
+            }
+            
+            getUsers().done(function(results)
+            {
+                var users = results;
+                var viewModel = {};
+                viewModel.users = ko.mapping.fromJS(users);
+                ko.applyBindings(viewModel);
+            });
+           
+           
 
 
 
         </script>
 
-        
-        
-        
+
+
+
     </body>
 </html>
 
